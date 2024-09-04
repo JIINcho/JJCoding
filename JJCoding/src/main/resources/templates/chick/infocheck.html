@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삐약</title>
+    <link rel="stylesheet" href="/css/chick/infocheck.css">
+</head>
+<body>
+<div class="box">
+    <p class="text1">선생님의 프로필이 완성되었어요!<br>이 정보가 맞나요?</p>
+    <image class="cookie" src="/img/cookie.png"></image>
+    <div class="textbox1" id="nameDisplay">
+
+    </div>
+    <div class="textbox2" id="genderDisplay">
+
+    </div>
+    <div class="textbox3" id="phoneDisplay">
+
+    </div>
+    <button class="yesbtn">
+        <p class="yes">네 맞아요!</p>
+    </button>
+    <button class="nobtn">
+        <p class="no">아니에요!</p>
+    </button>
+</div>
+
+<script>
+    window.onload = function() {
+        // URL 파라미터에서 데이터 가져오기
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const gender = urlParams.get('gender');
+        const phone = urlParams.get('phone');
+
+        // 데이터 화면에 표시
+        document.getElementById('nameDisplay').textContent = `${name}`;
+        document.getElementById('genderDisplay').textContent = `${gender}`;
+        document.getElementById('phoneDisplay').textContent = `${phone}`;
+
+        // 버튼 클릭 이벤트 처리
+        document.querySelector('.yesbtn').addEventListener('click', function() {
+            confirmProfile(true);
+        });
+
+        document.querySelector('.nobtn').addEventListener('click', function() {
+            confirmProfile(false);
+        });
+    }
+
+    function confirmProfile(isConfirmed) {
+        if(isConfirmed){
+            alert('프로필이 확인 되었어요!');
+            location.href = '/myinfo/myinfo.html';
+        }
+        else{
+            location.href = '/chick/TeacherInfo/teacherinfo.html';
+        }
+    }
+</script>
+
+</body>
+</html>

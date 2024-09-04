@@ -1,0 +1,159 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff; /* body의 배경색을 흰색으로 설정 */
+}
+.box {
+    width: 393px;
+    height: 852px;
+    background-color: #ffffff;
+    margin: 0 auto; /* 수평 중앙 정렬 */
+    position: relative; /* 위치 기준을 상대적으로 설정 */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+.myinfobox{
+    width: 338px;
+    height: 118px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: #FFF7EE;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    top: 82px;
+    left: 26px;
+}
+.chick{
+    width: 71px;
+    height: 69px;
+    flex-shrink: 0;
+    position: absolute;
+    top: 25px;
+    left: 23px;
+}
+.name{
+    width: 145px;
+    height: 31px;
+    flex-shrink: 0;
+    position: absolute;
+    color: #3B3B3B;
+    text-align: left;
+    font-family: Pretendard;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 0px;
+    top: 30px;
+    left: 111px;
+}
+.phone{
+    width: 145px;
+    height: 32px;
+    flex-shrink: 0;
+    position: absolute;
+    color: #3B3B3B;
+    text-align: left;
+    font-family: Pretendard;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 0px;
+    top: 53px;
+    left: 111px;
+}
+.modifybtn {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    cursor: pointer;
+}
+.modifyicon {
+    width: 18px;
+    height: 18px;
+}
+.addbtn{
+    width: auto;
+    height: auto;
+    border: none;
+    background: none;
+    color: #000;
+    font-family: Pretendard;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 27px; /* 158.824% */
+    position: absolute;
+    top: 204px;
+    left: 26px;
+}
+.kinderinfobox{
+    width: 338px;
+    height: 544px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: #FFF7EE;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    top: 256px;
+    left: 26px;
+}
+.list1{
+    width: 302px;
+    height: 53px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #FFF;
+    position: absolute;
+    top: 18px;
+    left: 19px;
+    border: none;
+}
+.kinder1{
+    display: inline;
+    width: auto;
+    height: auto;
+    text-align: left;
+    color: #5B5B5B;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    position: absolute;
+    top: 2px;
+    left: 23px;
+}
+.class1{
+    display: inline;
+    width: auto;
+    height: auto;
+    text-align: left;
+    color: #5B5B5B;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    position: absolute;
+    top: 2px;
+    right: 22px;
+}
+.notice{
+    color: #959595;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    position: absolute;
+    top: 800px;
+    left: 97px;
+}

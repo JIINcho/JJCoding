@@ -1,0 +1,151 @@
+.box {
+    width: 393px;
+    height: 852px;
+    background-color: #FF9900; /* 배경색을 주황색으로 변경 */
+    margin: 0 auto; /* 수평 중앙 정렬 */
+    position: relative; /* 위치 기준을 상대적으로 설정 */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff; /* body의 배경색을 흰색으로 설정 */
+}
+.welcome {
+    color: #000;
+    font-family: "Pretendard Variable";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px; /* 120% */
+    letter-spacing: -0.408px;
+    position: absolute; /* 절대 위치 설정 */
+    top: 123px; /* Y 좌표 */
+    left: 40px; /* X 좌표 */
+}
+.highlight {
+    color: #FFEBB8; /* "삐약이네" 텍스트의 색상을 빨간색으로 설정 */
+}
+.explanation {
+    color: #FFF;
+    font-family: Pretendard;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 17px; /* 130.769% */
+    letter-spacing: -0.408px;
+    position: absolute; /* 절대 위치 설정 */
+    top: 205px; /* Y 좌표 */
+    left: 40px; /* X 좌표 */
+}
+
+
+.chicken {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+}
+.chicken svg {
+    display: block;
+}
+.chickenface {
+    position: absolute; /* 절대 위치 설정 */
+    top: 358px; /* Y 좌표 */
+    left: 45.5px; /* X 좌표 */
+}
+.chickenhead {
+    width: 40.26px;
+    height: 227.599px;
+    flex-shrink: 0;
+    position: absolute;
+    top: 334px;
+    left: 116px;
+}
+.chickenbeak {
+    width: 83.727px;
+    height: 31.241px;
+    flex-shrink: 0;
+    position: absolute;
+    top: 475px;
+    left: 94px;
+}
+.chickenbeak-2 {
+    width: 83.727px;
+    height: 33.462px;
+    flex-shrink: 0;
+    position: absolute;
+    top: 455px;
+    left: 94px;
+}
+.chickeneye {
+    width: 120px;
+    height: 6px;
+    flex-shrink: 0;
+    position: absolute;
+    top: 450px;
+    left: 77px;
+    opacity: 1; /* 기본적으로는 보이도록 설정 */
+}
+
+.chickeneye-hover {
+    width: 120px;
+    height: 40px;
+    flex-shrink: 0;
+    position: absolute;
+    top: 430px;
+    left: 77px;
+    opacity: 0; /* 처음에는 숨김 */
+}
+
+.chicken:hover .chickeneye {
+    opacity: 0; /* chicken에 마우스를 올릴 때 숨김 */
+}
+
+.chicken:hover .chickeneye-hover {
+    opacity: 1; /* chicken에 마우스를 올릴 때 보이도록 설정 */
+}
+
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    /* 기본 버튼 스타일 숨기기 */
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+
+
+.chick-icon {
+    position: relative;
+    width: 256px;
+    height: 251px;
+}
+
+.chick {
+    position: relative;
+    top: 480px;
+    left: 130px;
+}
+
+.chick-icon .chick-hover {
+    width: 256px;
+    height: 251px;
+    position: absolute;
+    top: 480px;
+    left: 130px;
+    opacity: 0;
+}
+
+.chick-icon:hover .chick {
+    opacity: 0;
+}
+
+.chick-icon:hover .chick-hover {
+    opacity: 1;
+}

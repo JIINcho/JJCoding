@@ -1,0 +1,81 @@
+.box {
+    width: 393px;
+    height: 852px;
+    background-color: #FFB800; /* 배경색을 주황색으로 변경 */
+    margin: 0 auto; /* 수평 중앙 정렬 */
+    position: relative; /* 위치 기준을 상대적으로 설정 */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff; /* body의 배경색을 흰색으로 설정 */
+}
+.text1 {
+    color: #000;
+    font-family: "Pretendard Variable";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px; /* 120% */
+    letter-spacing: -0.408px;
+    position: absolute; /* 절대 위치 설정 */
+    top: 123px; /* Y 좌표 */
+    left: 40px; /* X 좌표 */
+}
+.title {
+    color: #EB2C22;
+    font-size: 36px;
+    font-family: "Pretendard Variable";
+    font-style: normal;
+    font-weight: 700;
+    line-height: 38px; /* 105.556% */
+    letter-spacing: -0.31px;
+    position: absolute; /* 절대 위치 설정 */
+    top: 173px; /* Y 좌표 */
+    left: 40px; /* X 좌표 */
+}
+.chick {
+    width: 348px;
+    height: 340px;
+    position: absolute;
+    top: 354px;
+    left: -80px;
+    z-index: 2;
+}
+.egg {
+    width: 353.741px;
+    height: 409.688px;
+    position: absolute;
+    top: 273px;
+    margin-left: 125px;
+    z-index: 1;
+}
+.egg1 {
+    width: 353.741px;
+    height: 409.688px;
+    position: absolute;
+    top: 273px;
+    margin-left: 150px;
+    z-index: 1;
+}
+.talklogin {
+    width: 223px;
+    height: 54px;
+    position: absolute;
+    top: 747px;
+    left: 85px;
+}
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    /* 기본 버튼 스타일 숨기기 */
+    appearance: none;
+    -webkit-appearance: none;
+}
