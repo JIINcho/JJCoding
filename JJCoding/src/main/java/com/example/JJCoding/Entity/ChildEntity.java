@@ -10,7 +10,7 @@ import lombok.Setter;
 @Table(name = "child")
 public class ChildEntity {
 
-//    dd
+//  수정이 잘 되는지 확인해볼까요?
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
