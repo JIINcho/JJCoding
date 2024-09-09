@@ -63,19 +63,37 @@ body {
     margin-left: 150px;
     z-index: 1;
 }
-.talklogin {
+.loginbtn {
+    background: none;
     width: 223px;
     height: 54px;
     position: absolute;
-    top: 747px;
-    left: 85px;
-}
-button {
-    background: none;
+    top: 770px;
+    left: 130px;
     border: none;
-    padding: 0;
-    cursor: pointer;
-    /* 기본 버튼 스타일 숨기기 */
-    appearance: none;
-    -webkit-appearance: none;
+    border-radius: 15px;
+    font-size: 23px;
+    font-family: "Pretendard";
+    font-weight: 500;
+}
+.signinbtn{
+    background: none;
+    width: 223px;
+    height: 54px;
+    position: absolute;
+    top: 770px;
+    left: 40px;
+    border: none;
+    border-radius: 15px;
+    font-size: 23px;
+    font-family: "Pretendard";
+    font-weight: 500;
+}
+.juststick{
+    font-family: "Pretendard";
+    font-size: 23px;
+    color: #000;
+    position: absolute;
+    top: 760px;
+    left: 198px;
 }

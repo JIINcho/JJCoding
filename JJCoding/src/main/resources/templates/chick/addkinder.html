@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>삐약</title>
+    <title>유치원 추가하기</title>
     <link rel="stylesheet" href="/css/chick/addkinder.css">
 </head>
 <body>
@@ -25,7 +25,7 @@
         <path opacity="0.33" d="M51.925 24.6781C49.9875 12.9187 42.7219 5.38279 36.0375 2.73279C40.5906 6.62498 44.6594 12.7531 45.9187 21.0344C48.3406 35.9406 40.6875 47.7 24.9937 47.7C21.6031 47.7 18.6 47.1203 16.0812 46.1265C19.6656 49.439 24.7031 51.3437 31 51.3437C46.5969 51.3437 54.25 39.5844 51.925 24.6781Z" fill="#D3976E"/>
     </svg>
     <div class="textbox2">
-        <input type= "text" class= "A1" id="nameInput" onblur="handleInputChange1()" maxlength="10" placeholder="예) 삐약이네 유치원/우주과학 유치원" autocomplete="off">
+        <input type= "text" class= "A1" id="kindername" onblur="handleInputChange1()" maxlength="20" placeholder="예) 삐약이네 유치원/우주과학 유치원" autocomplete="off">
     </div>
     <svg class="chick1" xmlns="http://www.w3.org/2000/svg" width="71" height="69" viewBox="0 0 71 69" fill="none">
         <path d="M5.42361 37.0549L9.86111 30.6666L15.7778 36.4166L23.6667 32.5833L29.5833 38.3333L37.4722 26.8333L45.3611 32.5833L51.2778 30.6666L55.2222 36.4166L61.1389 30.6666L65.0833 38.3333L61.1389 51.75L39.4444 61.3333L17.75 57.5L5.91667 46L5.42361 37.0549Z" fill="#99AAB5"/>
@@ -43,7 +43,7 @@
         <path opacity="0.33" d="M51.925 24.6781C49.9875 12.9187 42.7219 5.38279 36.0375 2.73279C40.5906 6.62498 44.6594 12.7531 45.9187 21.0344C48.3406 35.9406 40.6875 47.7 24.9937 47.7C21.6031 47.7 18.6 47.1203 16.0812 46.1265C19.6656 49.439 24.7031 51.3437 31 51.3437C46.5969 51.3437 54.25 39.5844 51.925 24.6781Z" fill="#D3976E"/>
     </svg>
     <div class="textbox4">
-        <input type= "text" class= "A2" id="genderInput" onblur="handleInputChange2()" maxlength="5" placeholder="예) 해바라기반/병아리반" autocomplete="off">
+        <input type= "text" class= "A2" id="classname" onblur="handleInputChange2()" maxlength="10" placeholder="예) 해바라기반/병아리반" autocomplete="off">
     </div>
     <svg class="chick2" xmlns="http://www.w3.org/2000/svg" width="71" height="69" viewBox="0 0 71 69" fill="none">
         <path d="M5.42361 37.0549L9.86111 30.6666L15.7778 36.4166L23.6667 32.5833L29.5833 38.3333L37.4722 26.8333L45.3611 32.5833L51.2778 30.6666L55.2222 36.4166L61.1389 30.6666L65.0833 38.3333L61.1389 51.75L39.4444 61.3333L17.75 57.5L5.91667 46L5.42361 37.0549Z" fill="#99AAB5"/>
@@ -61,10 +61,10 @@
         <path opacity="0.33" d="M51.925 24.6781C49.9875 12.9187 42.7219 5.38279 36.0375 2.73279C40.5906 6.62498 44.6594 12.7531 45.9187 21.0344C48.3406 35.9406 40.6875 47.7 24.9937 47.7C21.6031 47.7 18.6 47.1203 16.0812 46.1265C19.6656 49.439 24.7031 51.3437 31 51.3437C46.5969 51.3437 54.25 39.5844 51.925 24.6781Z" fill="#D3976E"/>
     </svg>
     <div class="textbox6">
-        <input type= "text" class= "A3" id="phoneNumberInput" maxlength="20" placeholder="예) 삐약로 닭번지 77-1212" autocomplete="off">
+        <input type= "text" class= "A3" id="address" maxlength="40" placeholder="예) 삐약로 닭번지 77-1212" autocomplete="off">
     </div>
-    <button type="button" class="okbtn" onclick="redirectToREteacher()">
-        <p class="ok">확인testrestres</p>
+    <button type="button" class="okbtn" onclick="addkinder()">
+        <p class="ok">확인</p>
     </button>
 </div>
 
