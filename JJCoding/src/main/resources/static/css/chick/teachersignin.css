@@ -1,0 +1,350 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff; /* body의 배경색을 흰색으로 설정 */
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input::placeholder {
+    color: #B3B3B3;
+    text-align: left;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 27px; /* 180% */
+    letter-spacing: -0.31px;
+}
+.box {
+    width: 393px;
+    height: 852px;
+    background-color: #ffffff;
+    margin: 0 auto; /* 수평 중앙 정렬 */
+    position: relative; /* 위치 기준을 상대적으로 설정 */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+.text1{
+    color: #000;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    position: absolute;
+    top: 80px;
+    left: 30px;
+}
+.text2{
+    color: #000;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    position: absolute;
+    top: 105px;
+    left: 30px;
+}
+.div1{
+    width: 328px;
+    height: 53px;
+    position: absolute;
+    left: 30px;
+    top: 160px;
+    border: 1.5px solid rgb(188, 188, 188);
+    border-radius: 15px;
+}
+.checkbtn1{
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 수직 중앙 정렬 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    background: none;
+    border: none;
+    top: 1px;
+    left: 0px;
+}
+.check{
+    width: 26px;
+    height: 26px;
+    min-width: 26px; /* 최소 너비 고정 */
+    min-height: 26px; /* 최소 높이 고정 */
+}
+.allchecktext1{
+    color: #A8A8A8;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    position: absolute;
+    top: 1px;
+    left: 50px;
+}
+.checkbtn2{
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 수직 중앙 정렬 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    background: none;
+    border: none;
+    top: 220px;
+    left: 30px;
+}
+.checkbtn3{
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 수직 중앙 정렬 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    background: none;
+    border: none;
+    left: 30px;
+    top: 260px;
+}
+.checkbtn4{
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 수직 중앙 정렬 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    background: none;
+    border: none;
+    left: 30px;
+    top: 300px;
+}
+.checktxt1{
+    color: #A8A8A8;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    position: absolute;
+    top: 223px;
+    left: 82px;
+}
+.checktxt2{
+    color: #A8A8A8;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    position: absolute;
+    top: 263px;
+    left: 82px;
+}
+.checktxt3{
+    color: #A8A8A8;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    position: absolute;
+    top: 303px;
+    left: 82px;
+}
+.text3{
+    color: #000;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    position: absolute;
+    top: 370px;
+    left: 30px;
+}
+.namediv{
+    width: 205px;
+    height: 53px;
+    position: absolute;
+    left: 30px;
+    top: 425px;
+    border: 1.5px solid rgb(188, 188, 188);
+    border-radius: 15px;
+}
+.nameinput{
+    color: #000;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    border: none;          /* 테두리 없애기 */
+    background: none;      /* 배경 없애기 */
+    width: 205px;
+    height: 53px;
+    outline: none;         /* 포커스 시 나타나는 외곽선 없애기 */
+    font-size: 16px;       /* 글자 크기 설정 */
+    text-align: left;
+    position: absolute;
+    left: 22px;
+}
+.verifybtn{
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: 500;
+    width: 113px;
+    height: 53px;
+    position: absolute;
+    right: 30px;
+    top: 425px;
+    border-radius: 10px;
+    border: 1px #B3B3B3;
+    background: #D9D9D9;
+}
+.redtext1{
+    position: absolute;
+    top: 475px;
+    left: 30px;
+    color: #F00;
+    font-family: Pretendard;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+}
+.text4{
+    color: #000;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    position: absolute;
+    top: 525px;
+    left: 30px;
+}
+.pwddiv1{
+    width: 328px;
+    height: 53px;
+    position: absolute;
+    left: 30px;
+    top: 575px;
+    border: 1.5px solid rgb(188, 188, 188);
+    border-radius: 15px;
+}
+.pwdinput1{
+    color: #000;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    border: none;          /* 테두리 없애기 */
+    background: none;      /* 배경 없애기 */
+    width: 205px;
+    height: 53px;
+    outline: none;         /* 포커스 시 나타나는 외곽선 없애기 */
+    font-size: 16px;       /* 글자 크기 설정 */
+    text-align: left;
+    position: absolute;
+    left: 22px;
+}
+.pwddiv2{
+    width: 328px;
+    height: 53px;
+    position: absolute;
+    left: 30px;
+    top: 640px;
+    border: 1.5px solid rgb(188, 188, 188);
+    border-radius: 15px;
+}
+.pwdinput2{
+    color: #000;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    border: none;          /* 테두리 없애기 */
+    background: none;      /* 배경 없애기 */
+    width: 205px;
+    height: 53px;
+    outline: none;         /* 포커스 시 나타나는 외곽선 없애기 */
+    font-size: 16px;       /* 글자 크기 설정 */
+    text-align: left;
+    position: absolute;
+    left: 22px;
+}
+.redtext2{
+    position: absolute;
+    top: 690px;
+    left: 30px;
+    color: #F00;
+    font-family: Pretendard;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+}
+.okbtn{
+    width: 104px;
+    height: 42px;
+    position: absolute;
+    top: 790px;
+    left: 144.5px;
+    border-radius: 20px;
+    border: none;
+    background: #F5F5F5;
+    font-family: Pretendard;
+    font-size: 15px;
+    color: #828282;
+}
+.essential1{
+    position: absolute;
+    top: 235.4px;
+    left: 183px;
+    text-align: center;
+    line-height: 19px;
+    color: #888;
+    font-family: Pretendard;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    width: 32px;
+    height: 19px;
+    border-radius: 20px;
+    border: 1px solid #D2D2D2;
+    background: #D2D2D2;
+}
+.essential2{
+    position: absolute;
+    top: 275.4px;
+    left: 223px;
+    text-align: center;
+    line-height: 19px;
+    color: #888;
+    font-family: Pretendard;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    width: 32px;
+    height: 19px;
+    border-radius: 20px;
+    border: 1px solid #D2D2D2;
+    background: #D2D2D2;
+}
+.essential3{
+    position: absolute;
+    top: 315.4px;
+    left: 258px;
+    text-align: center;
+    line-height: 19px;
+    color: #888;
+    font-family: Pretendard;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    width: 32px;
+    height: 19px;
+    border-radius: 20px;
+    border: 1px solid #D2D2D2;
+    background: #D2D2D2;
+}

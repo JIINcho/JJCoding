@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>삐약</title>
+    <title>정보 입력</title>
     <link rel="stylesheet" href="/css/chick/teacherinfo.css">
 </head>
 <body>
@@ -64,23 +64,13 @@
     <div class="textbox6">
         <input type= "number" class= "A3" id="phoneNumberInput" maxlength="20" placeholder="숫자만 입력해주세요." autocomplete="off">
     </div>
-    <button type="button" class="okbtn" onclick="redirectToREteacher()">
+    <button type="button" class="okbtn">
         <p class="ok">확인</p>
     </button>
 </div>
 
 <script>
 
-    function redirectToREteacher() {
-        const name = document.getElementById('nameInput').value.trim();
-        const gender = document.getElementById('genderInput').value.trim();
-        const phone = document.getElementById('phoneNumberInput').value.trim();
-
-
-        // 절대 경로를 통해 URL 설정
-        const url = `/reckteacher/REteacher.html?name=${encodeURIComponent(name)}&gender=${encodeURIComponent(gender)}&phone=${encodeURIComponent(phone)}`;
-        window.location.href = url;
-    }
 
     let inputValue1 = ''; // A1 입력값을 추적할 변수
     let inputValue2 = ''; // A2 입력값을 추적할 변수
