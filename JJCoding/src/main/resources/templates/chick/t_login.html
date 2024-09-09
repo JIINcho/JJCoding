@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+<div class="box">
+    <p class="idtext">아이디</p>
+    <div class="idtxtbox">
+        <input type="text" class="idinput" autocomplete="off" placeholder="아이디" maxlength="10">
+    </div>
+    <p class="pwdtext">비밀번호</p>
+    <div class="pwdtxtbox">
+        <input type="password" class="pwdinput" autocomplete="off" placeholder="비밀번호" maxlength="50">
+    </div>
+    <button class="remembermebtn" id="remembercheck">
+        <svg class="check" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+            <path d="M13 21.84C8.112 21.84 4.16 17.888 4.16 13C4.16 8.11197 8.112 4.15997 13 4.15997C17.888 4.15997 21.84 8.11197 21.84 13C21.84 17.888 17.888 21.84 13 21.84ZM13 5.19997C8.684 5.19997 5.2 8.68397 5.2 13C5.2 17.316 8.684 20.8 13 20.8C17.316 20.8 20.8 17.316 20.8 13C20.8 8.68397 17.316 5.19997 13 5.19997Z" fill="#A8A8A8"/>
+            <path d="M11.96 16.848L7.436 12.324L8.164 11.596L11.96 15.392L17.836 9.51599L18.564 10.244L11.96 16.848Z" fill="#A8A8A8"/>
+        </svg>
+    </button>
+    <p class="remembermetxt">아이디/비밀번호 기억하기</p>
+    <div class="okbtn">
+        확인
+    </div>
+</div>
+<script>
+    let isChecked = false;
+
+    document.getElementById('remembercheck').addEventListener('click', function() {
+        const svgPaths = this.querySelectorAll('svg path');  // 모든 경로 선택
+        const text = document.querySelector('.remembermetxt');
+
+        if (isChecked) {
+            svgPaths.forEach((path) => {
+                path.style.fill = '#A8A8A8'; // 비활성화 색상
+            });
+            text.style.color = '#A8A8A8'; // 비활성화 텍스트 색상
+        } else {
+            svgPaths.forEach((path) => {
+                path.style.fill = 'black'; // 활성화 색상
+            });
+            text.style.color = 'black'; // 활성화 텍스트 색상
+        }
+        isChecked = !isChecked; // 상태 토글
+    });
+</script>
+</body>
+</html>
