@@ -53,29 +53,31 @@
     <div class="essential3" id="essentialtxt3">
         필수
     </div>
-    <p class="text3">아이디</p>
-    <div class="namediv">
-        <input type="text" class="nameinput" autocomplete="off" placeholder="홍길동" maxlength="10">
-    </div>
-    <button class="verifybtn">
-        중복확인
-    </button>
-    <p class="redtext1">
-        영문 소문자와 숫자만 사용하여, 영문 소문자로 시작하는<br>4-12자의 아이디를 입력해주세요.
-    </p>
-    <p class="text4">비밀번호</p>
-    <div class="pwddiv1">
-        <input type="password" class="pwdinput1" autocomplete="off" placeholder="비밀번호" maxlength="50">
-    </div>
-    <div class="pwddiv2">
-        <input type="password" class="pwdinput2" autocomplete="off" placeholder="비밀번호 확인" maxlength="50">
-    </div>
-    <p class="redtext2">
-        영문, 숫자, 특수문자를 조합하여 6-20자 이내로 입력해주세요.
-    </p>
-    <button class="okbtn">
-        다음으로 >
-    </button>
+    <form method="post" action="/teacherSave" >
+        <p class="text3">아이디</p>
+        <div class="namediv">
+            <input type="text" class="nameinput" autocomplete="off" placeholder="홍길동" maxlength="10" name="teacherId">
+        </div>
+        <button class="verifybtn">
+            중복확인
+        </button>
+        <p class="redtext1">
+            영문 소문자와 숫자만 사용하여, 영문 소문자로 시작하는<br>4-12자의 아이디를 입력해주세요.
+        </p>
+        <p class="text4">비밀번호</p>
+        <div class="pwddiv1">
+            <input type="password" class="pwdinput1" autocomplete="off" placeholder="비밀번호" maxlength="50" name="teacherPass">
+        </div>
+        <div class="pwddiv2">
+            <input type="password" class="pwdinput2" autocomplete="off" placeholder="비밀번호 확인" maxlength="50">
+        </div>
+        <p class="redtext2">
+            영문, 숫자, 특수문자를 조합하여 6-20자 이내로 입력해주세요.
+        </p>
+        <button class="okbtn" type="submit">
+            다음으로 >
+        </button>
+    </form>
 </div>
 <script>
     // 전체 동의 토글 상태 변수
