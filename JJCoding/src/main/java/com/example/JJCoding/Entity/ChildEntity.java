@@ -10,7 +10,6 @@ import lombok.Setter;
 @Table(name = "child")
 public class ChildEntity {
 
-//  수정이 잘 되는지 확인해볼까요?
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,4 +26,14 @@ public class ChildEntity {
     private String childPersonal;
     @Column
     private String childSpecial;
+
+    //하나의 아이는 하나의 부모에게만 소속
+    @ManyToOne
+    @JoinColumn(name = "parents_id")
+    private ParentsEntity parents;
+
+    //하나의 아이는 하나의 유치원에 소속
+    @ManyToOne
+    @JoinColumn(name = "kindergarden_id")
+    private KinderGardenEntity kindergarden;
 }
