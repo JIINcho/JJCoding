@@ -26,43 +26,59 @@ public class ChickController {
 
     //회원가입페이지
     @GetMapping("/chick/sign")
-    public String sign(Model model) {
-        model.addAttribute("teacherDTO", new TeacherDTO());
+    public String sign() {
         return "/chick/teachersignin";
     }
 
     //회원가입페이지2
     @GetMapping("/chick/sign2")
-    public String sign2(HttpSession session, Model model) {
-        TeacherDTO teacherDTO = (TeacherDTO) session.getAttribute("teacherDTO");
-        if (teacherDTO == null) {
-            return "redirect:/chick/sign";
-        }
-        model.addAttribute("teacherDTO", teacherDTO);
+    public String sign2() {
         return "/chick/teacherinfo";
     }
 
     //회원정보 받아오기1
     @PostMapping("/teacherSave1")
-    public String teacherSave1(@ModelAttribute("teacherDTO") TeacherDTO teacherDTO, HttpSession session) {
+    public String teacherSave1(@ModelAttribute TeacherDTO teacherDTO, HttpSession session) {
         session.setAttribute("teacherDTO", teacherDTO);
         return "redirect:/chick/sign2";
     }
 
     //선생님 회원가입 성공
     @PostMapping("/teacherSave")
-    public String teacherSave(@ModelAttribute("teacherDTO") TeacherDTO teacherDTO, HttpSession session) {
+    public String teacherSave(@ModelAttribute TeacherDTO teacherDTO, HttpSession session) {
+        // 세션에서 teacherDTO 가져오기
         TeacherDTO sessionTeacherDTO = (TeacherDTO) session.getAttribute("teacherDTO");
-        if(sessionTeacherDTO == null) {
+
+        if (sessionTeacherDTO != null) {
+            // 세션에 저장된 값 유지, 두 번째 페이지에서 받은 값 병합
+            if (teacherDTO.getTeacherId() != null) {
+                sessionTeacherDTO.setTeacherId(teacherDTO.getTeacherId());
+            }
+            if (teacherDTO.getTeacherPass() != null) {
+                sessionTeacherDTO.setTeacherPass(teacherDTO.getTeacherPass());
+            }
+            if (teacherDTO.getTeacherName() != null) {
+                sessionTeacherDTO.setTeacherName(teacherDTO.getTeacherName());
+            }
+            if (teacherDTO.getTeacherGender() != null) {
+                sessionTeacherDTO.setTeacherGender(teacherDTO.getTeacherGender());
+            }
+            if (teacherDTO.getTeacherPhoneNumber() != null) {
+                sessionTeacherDTO.setTeacherPhoneNumber(teacherDTO.getTeacherPhoneNumber());
+            }
+
+            // 병합된 정보를 최종적으로 저장
+            teacherService.save(sessionTeacherDTO);
+
+            // 세션에서 객체 제거 (필요에 따라)
+            session.removeAttribute("teacherDTO");
+
+            System.out.println("최종 저장 teacherDTO: " + sessionTeacherDTO);
+        } else {
+            // 세션에 teacherDTO가 없으면 첫 번째 페이지로 리다이렉트
             return "redirect:/chick/sign";
         }
 
-        sessionTeacherDTO.setTeacherName(teacherDTO.getTeacherName());
-        sessionTeacherDTO.setTeacherGender(teacherDTO.getTeacherGender());
-        sessionTeacherDTO.setTeacherPhoneNumber(teacherDTO.getTeacherPhoneNumber());
-
-        teacherService.save(teacherDTO);
-        System.out.println("teacherDTO"+teacherDTO);
         return "redirect:/chick/login";
     }
 
