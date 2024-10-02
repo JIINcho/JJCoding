@@ -1,5 +1,6 @@
 package com.example.JJCoding.Controller;
 
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.ui.Model;
 import com.example.JJCoding.DTO.TeacherDTO;
@@ -26,8 +27,45 @@ public class ChickController {
     //회원가입페이지
     @GetMapping("/chick/sign")
     public String sign(Model model) {
+        model.addAttribute("teacherDTO", new TeacherDTO());
         return "/chick/teachersignin";
     }
+
+    //회원가입페이지2
+    @GetMapping("/chick/sign2")
+    public String sign2(HttpSession session, Model model) {
+        TeacherDTO teacherDTO = (TeacherDTO) session.getAttribute("teacherDTO");
+        if (teacherDTO == null) {
+            return "redirect:/chick/sign";
+        }
+        model.addAttribute("teacherDTO", teacherDTO);
+        return "/chick/teacherinfo";
+    }
+
+    //회원정보 받아오기1
+    @PostMapping("/teacherSave1")
+    public String teacherSave1(@ModelAttribute("teacherDTO") TeacherDTO teacherDTO, HttpSession session) {
+        session.setAttribute("teacherDTO", teacherDTO);
+        return "redirect:/chick/sign2";
+    }
+
+    //선생님 회원가입 성공
+    @PostMapping("/teacherSave")
+    public String teacherSave(@ModelAttribute("teacherDTO") TeacherDTO teacherDTO, HttpSession session) {
+        TeacherDTO sessionTeacherDTO = (TeacherDTO) session.getAttribute("teacherDTO");
+        if(sessionTeacherDTO == null) {
+            return "redirect:/chick/sign";
+        }
+
+        sessionTeacherDTO.setTeacherName(teacherDTO.getTeacherName());
+        sessionTeacherDTO.setTeacherGender(teacherDTO.getTeacherGender());
+        sessionTeacherDTO.setTeacherPhoneNumber(teacherDTO.getTeacherPhoneNumber());
+
+        teacherService.save(teacherDTO);
+        System.out.println("teacherDTO"+teacherDTO);
+        return "redirect:/chick/login";
+    }
+
 
     //로그인페이지
     @GetMapping("/chick/login")
@@ -50,20 +88,23 @@ public class ChickController {
         return "/chick/addkinder";
     }
 
-    //선생님 회원가입 성공
-    @PostMapping("/teacherSave")
-    public String teacherSave(@ModelAttribute TeacherDTO teacherDTO) {
-        teacherService.save(teacherDTO);
-        System.out.println("teacherDTO"+teacherDTO);
-        return "/chick/login";
-    }
 
     //선생님 로그인 성공
     @PostMapping("/teacherSuccess")
-    public String teacherSuccess(@ModelAttribute TeacherDTO teacherDTO, Model model) {
+    public String teacherSuccess(@ModelAttribute TeacherDTO teacherDTO, Model model, HttpSession session) {
         TeacherDTO loginResult = teacherService.login(teacherDTO);
         if (loginResult != null) {
-            // 로그인 성공
+            //로그인 성공
+            session.setAttribute("teacherId", loginResult.getTeacherId());
+            session.setAttribute("teacherPass", loginResult.getTeacherPass());
+            session.setAttribute("teacherName", loginResult.getTeacherName());
+            session.setAttribute("teacherPhoneNumber", loginResult.getTeacherPhoneNumber());
+
+            System.out.println("teacherId: " + session.getAttribute("teacherId"));
+            System.out.println("teacherPass: " + session.getAttribute("teacherPass"));
+            System.out.println("teacherName: " + session.getAttribute("teacherName"));
+            System.out.println("teacherPhoneNumber: " + session.getAttribute("teacherPhoneNumber"));
+
             model.addAttribute("message", "로그인에 성공하셨습니다!");
             model.addAttribute("status", "success");
             return "message"; // 모달을 띄우기 위한 페이지
