@@ -133,3 +133,32 @@ body {
     font-weight: 300;
     font-style: normal;
 }
+.gendericon{
+    position: absolute;
+    top: 97px;
+    right: 37px;
+}
+.registerbtn{
+    position: absolute;
+    top: 763px;
+    left: 94px;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    padding: 5px 10px;
+    width: 206px;
+    height: 42px;
+    border-radius: 20px;
+    background: #F5F5F5;
+    border: none;
+}
+.btnicon{
+    margin-right: 8px;
+}
+.btntxt{
+    color: #828282;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+}
