@@ -1,0 +1,135 @@
+body {
+
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff; /* body의 배경색을 흰색으로 설정 */
+}
+
+.box {
+    width: 393px;
+    height: 852px;
+    background-color: #ffffff;
+    margin: 0 auto; /* 수평 중앙 정렬 */
+    position: relative; /* 위치 기준을 상대적으로 설정 */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+.childinfotxt{
+    color: #000;
+    font-family: Pretendard;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    position: absolute;
+    top: 75px;
+    left: 40px;
+}
+.textbox1{
+    width: 328px;
+    height: 119px;
+    position: absolute;
+    top: 151px;
+    left: 33px;
+    border-radius: 10px;
+    background: #FEE;
+}
+.txt1{
+    position: absolute;
+    top: 16px;
+    left: 36px;
+    color: #000;
+    font-family: Pretendard;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+}
+.txt2{
+    position: absolute;
+    top: 52px;
+    left: 36px;
+    color: #000;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+}
+.touchbox1{
+    width: 328px;
+    min-height: 53px;
+    max-height: 300px;
+    border-radius: 10px;
+    background: #F5F5F5;
+    position: absolute;
+    top: 288px;
+    left: 33px;
+    overflow: hidden;
+    transition: all 0.3s ease;  /* 부드러운 전환 효과 */
+}
+.touchbox2{
+    width: 328px;
+    min-height: 53px;
+    max-height: 300px;
+    border-radius: 10px;
+    background: #F5F5F5;
+    position: absolute;
+    top: 359px;
+    left: 33px;
+    overflow: hidden;
+    transition: all 0.3s ease;  /* 부드러운 전환 효과 */
+}
+.touchbox3{
+    width: 328px;
+    min-height: 53px;
+    max-height: 300px;
+    border-radius: 10px;
+    background: #F5F5F5;
+    position: absolute;
+    top: 430px;
+    left: 33px;
+    overflow: hidden;
+    transition: all 0.3s ease;  /* 부드러운 전환 효과 */
+}
+.touchbox4{
+    width: 328px;
+    min-height: 53px;
+    max-height: 300px;
+    border-radius: 10px;
+    background: #F5F5F5;
+    position: absolute;
+    top: 501px;
+    left: 33px;
+    transition: all 0.3s ease;  /* 부드러운 전환 효과 */
+}
+.touchbox1 .title, .touchbox2 .title, .touchbox3 .title, .touchbox4 .title{
+    margin: 0;
+    line-height: 53px;
+    position: absolute;
+    left: 36px;
+    color: #000;
+    font-family: Pretendard;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+}
+.touchbox1.expanded, .touchbox2.expanded, .touchbox3.expanded, .touchbox4.expanded{
+    background: #FEE;
+    max-height: 300px;
+}
+.touchbox1 .content, .touchbox2 .content, .touchbox3 .content, .touchbox4 .content{
+    display: none;
+}
+.touchbox1.expanded .content, .touchbox2.expanded .content, .touchbox3.expanded .content, .touchbox4.expanded .content{
+    display: block;
+    position: relative;
+    margin-top: 50px; /*확장되는 너비 조정 부분*/
+    line-height: 1;
+    left: 36px;
+    color: #000;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-weight: 300;
+    font-style: normal;
+}

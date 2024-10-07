@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/chick/c_info.css">
+</head>
+<body>
+<div class="box">
+    <p class="childinfotxt">아이의 정보가 표시됩니다.</p>
+    <div class="textbox1">
+        <p class="txt1">부모님 연락처</p>
+        <p class="txt2">010-1234-2341</p>
+    </div>
+    <div id ="infobox1" class="touchbox1">
+        <p class="title">건강 특이사항</p>
+        <div class="content">
+            <p>asdfasdf</p>
+            <p>adsfasfd</p>
+            <p>test</p>
+        </div>
+    </div>
+    <div id ="infobox2" class="touchbox2">
+        <p class="title">생활습관</p>
+        <div class="content">
+            <p>123123</p>
+        </div>
+    </div>
+    <div id ="infobox3" class="touchbox3">
+        <p class="title">성격특성</p>
+        <div class="content">
+            <p>ㅁㄴㅇㄻㄴㄹㅇ</p>
+        </div>
+    </div>
+    <div id ="infobox4" class="touchbox4">
+        <p class="title">특별 주의사항</p>
+        <div class="content">
+            <p>안녕하세요</p>
+            <p>asdf</p>
+        </div>
+    </div>
+</div>
+<script>
+    const infoboxes = [
+        document.getElementById('infobox1'),
+        document.getElementById('infobox2'),
+        document.getElementById('infobox3'),
+        document.getElementById('infobox4')
+    ];
+
+    infoboxes.forEach((infobox) => {
+        infobox.addEventListener('click', () => {
+            infobox.classList.toggle('expanded');  // 'expanded' 클래스를 토글
+
+            // 나머지 div의 위치를 조정
+            updatePositions();
+        });
+    });
+
+    function updatePositions() {
+        let offset = 288;  // 시작 top 위치 (첫 번째 div의 위치)
+
+        infoboxes.forEach(infobox => {
+            infobox.style.top = `${offset}px`;  // 각 div의 top 위치 설정
+            // 원래 크기일 때는 min-height에 따라 53px, expanded에 따라 동적 높이로 설정
+            offset += infobox.classList.contains('expanded') ? infobox.scrollHeight + 18 : 53 + 18;
+        });
+    }
+</script>
+</body>
+</html>
