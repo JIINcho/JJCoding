@@ -46,7 +46,7 @@ input::placeholder {
     top: 80px;
     left: 36px;
 }
-.chick{
+.chicken1{
     width: 71px;
     height: 69px;
     flex-shrink: 0;
@@ -87,7 +87,7 @@ input::placeholder {
     height: 45px;
     flex-shrink: 0;
     border-radius: 10px;
-    background-color: #FFF7EE;
+    background-color: #FFE2E1;
     position: absolute;
     top: 285px;
     left: 40px;
@@ -106,7 +106,7 @@ input::placeholder {
 .textbox:focus {
     outline: none;         /* 포커스 시 외곽선 없애기 */
 }
-.chick1{
+.chicken2{
     width: 71px;
     height: 69px;
     flex-shrink: 0;
@@ -176,7 +176,7 @@ input::placeholder {
     line-height: 42px;
     border: none;
 }
-.chick2{
+.chicken3{
     width: 71px;
     height: 69px;
     flex-shrink: 0;
@@ -228,7 +228,7 @@ input::placeholder {
     height: 45px;
     flex-shrink: 0;
     border-radius: 10px;
-    background-color: #FFF7EE;
+    background-color: #FFE2E1;
     position: absolute;
     top: 640px;
     left: 42px;
@@ -268,7 +268,7 @@ input::placeholder {
     line-height: 15px;
 }
 /* 초기에 숨겨진 요소들 */
-.chick1, .textbox3, .egg1, .textbox4, .manbtn, .womanbtn, .chick2, .textbox5, .egg2, .notice {
+.chicken2, .textbox3, .egg1, .textbox4, .manbtn, .womanbtn, .chicken3, .textbox5, .egg2, .notice {
     opacity: 0; /* 초기에 투명하게 */
     transform: translateY(-20px); /* 위로 이동하며 초기 위치 설정 */
     transition: opacity 0.5s ease, transform 0.5s ease; /* 부드러운 애니메이션 설정 */
