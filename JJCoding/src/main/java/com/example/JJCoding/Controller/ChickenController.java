@@ -20,19 +20,9 @@ public class ChickenController {
         return "/chicken/chicken";
     }
 
-//    //부모님 회원가입 성공
-//    @PostMapping("/parentsSave")
-//    public String chickSave(Model model) {
-//        System.out.println("parentsDTO = " + parentsDTO);
-//        parentsService.save(parentsDTO);
-//        return "/chick/myinfo"; //회원가입 html 이름
-//    }
-//
-//    //부모님 로그인 성공
-//    @PostMapping("/parentsSuccess")
-//    public String chickSuccess(Model model) {
-//        ParentsDTO loginResult = parentsService.login(parentsDTO);
-//        return "/chick/myinfo";
-//    }
+    @GetMapping("/chickeninfo")
+    public String ChickenInfo(Model model) {
+        return "/chicken/p_info";
+    }
 
 }

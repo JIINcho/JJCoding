@@ -1,5 +1,6 @@
 package com.example.JJCoding.Entity;
 
+import com.example.JJCoding.DTO.KinderGardenDTO;
 import com.example.JJCoding.Util.CodeGenerator;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -33,9 +34,6 @@ public class KinderGardenEntity {
     @Column
     private String kindergardenAddress;
 
-    @Column
-    private String kindergardenMap;
-
     //유치원은 하나의 선생님에게 소속
     @ManyToOne
     @JoinColumn(name = "teacher_id")
@@ -44,4 +42,13 @@ public class KinderGardenEntity {
     //하나의 유치원에 여러명의 아이들이 소속
     @OneToMany(mappedBy = "kindergarden", cascade = CascadeType.ALL)
     private List<ChildEntity> childList;
+
+    public static KinderGardenEntity toKinderGardenEntity(KinderGardenDTO kinderGardenDTO) {
+        KinderGardenEntity kinderGardenEntity = new KinderGardenEntity();
+        kinderGardenEntity.setId(kinderGardenDTO.getId());
+        kinderGardenEntity.setKindergardenName(kinderGardenDTO.getKindergardenName());
+        kinderGardenEntity.setKindergardenClass(kinderGardenDTO.getKindergardenClass());
+        kinderGardenEntity.setKindergardenAddress(kinderGardenDTO.getKindergardenAddress());
+        return kinderGardenEntity;
+    }
 }

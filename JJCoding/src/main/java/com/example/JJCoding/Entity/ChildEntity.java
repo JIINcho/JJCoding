@@ -26,6 +26,12 @@ public class ChildEntity {
     private String childPersonal;
     @Column
     private String childSpecial;
+    @Column
+    private String birthYear;
+    @Column
+    private String birthMonth;
+    @Column
+    private String birthDay;
 
     //하나의 아이는 하나의 부모에게만 소속
     @ManyToOne
