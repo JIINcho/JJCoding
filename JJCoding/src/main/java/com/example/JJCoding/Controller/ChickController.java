@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequiredArgsConstructor
@@ -99,11 +100,6 @@ public class ChickController {
         return "/chick/t_myinfo";
     }
 
-    @GetMapping("/addkinder")
-    public String addkinder(Model model) {
-        return "/chick/addkinder";
-    }
-
 
     //선생님 로그인 성공
     @PostMapping("/teacherSuccess")
@@ -121,6 +117,7 @@ public class ChickController {
             System.out.println("teacherName: " + session.getAttribute("teacherName"));
             System.out.println("teacherPhoneNumber: " + session.getAttribute("teacherPhoneNumber"));
 
+
             model.addAttribute("message", "로그인에 성공하셨습니다!");
             model.addAttribute("status", "success");
             return "message"; // 모달을 띄우기 위한 페이지
@@ -130,5 +127,10 @@ public class ChickController {
             model.addAttribute("status", "fail");
             return "message"; // 모달을 띄우기 위한 페이지
         }
+    }
+
+    @GetMapping("/check-teacherID")
+    public boolean checkTeacherID(@RequestParam String teacherID) {
+        return teacherService.TeacherIdCheck(teacherID);
     }
 }
