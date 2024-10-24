@@ -157,3 +157,33 @@ body {
     top: 800px;
     left: 97px;
 }
+.listbtn1{
+    width: 302px;
+    height: 53px;
+    position: absolute;
+    top: 18px;
+    left: 19px;
+    background: #FFF;
+    border-radius: 10px;
+    border: none;
+}
+.k_name{
+    position: absolute;
+    top: 5px;
+    left: 23px;
+    color: #5B5B5B;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+}
+.c_name{
+    position: absolute;
+    top: 5px;
+    right: 23px;
+    color: #5B5B5B;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+}
