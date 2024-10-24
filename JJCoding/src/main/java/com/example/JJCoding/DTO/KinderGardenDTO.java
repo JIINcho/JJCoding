@@ -17,4 +17,12 @@ public class KinderGardenDTO {
     private String kindergardenClass;
     private String kindergardenAddress;
 
+    public static KinderGardenDTO toKinderGardenDTO(KinderGardenEntity kinderGardenEntity) {
+        KinderGardenDTO kinderGardenDTO = new KinderGardenDTO();
+        kinderGardenDTO.setId(kinderGardenEntity.getId());
+        kinderGardenDTO.setKindergardenName(kinderGardenEntity.getKindergardenName());
+        kinderGardenDTO.setKindergardenClass(kinderGardenEntity.getKindergardenClass());
+        kinderGardenDTO.setKindergardenAddress(kinderGardenEntity.getKindergardenAddress());
+        return kinderGardenDTO;
+    }
 }
