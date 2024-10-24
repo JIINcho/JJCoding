@@ -30,12 +30,10 @@
         <p>+ 유치원 추가하기</p>
     </button>
     <div class="kinderinfobox">
-        <tbody class="kinderinfobox">
-        <tr th:each="kinderGarden : ${kinderGardenEntityList}">
-            <td th:text="${kinderGarden.kindergardenName}"></td>
-            <td th:text="${kinderGarden.kindergardenClass}"></td>
-        </tr>
-        </tbody>
+        <button class="listbtn1" th:each="kinderGarden : ${kinderGardenEntityList}" style="margin-top: 12px;">
+            <p class="k_name" th:text="${kinderGarden.kindergardenName}">삐약이네 유치원</p>
+            <p class="c_name" th:text="${kinderGarden.kindergardenClass}">병아리 반</p>
+        </button>
     </div>
     <p class="notice">최근 8개의 등록정보만 나타납니다.</p>
 </div>
