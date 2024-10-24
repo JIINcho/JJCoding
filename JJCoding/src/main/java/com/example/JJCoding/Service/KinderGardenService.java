@@ -6,10 +6,16 @@ import com.example.JJCoding.Entity.TeacherEntity;
 import com.example.JJCoding.Repository.KinderGardenRepository;
 import com.example.JJCoding.Repository.TeacherRepository;
 import jakarta.servlet.http.HttpSession;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class KinderGardenService {
 
     @Autowired
@@ -36,5 +42,9 @@ public class KinderGardenService {
 
         // 유치원 엔티티 저장
         kinderGardenRepository.save(kinderGardenEntity);
+    }
+
+    public List<KinderGardenEntity> getKinderGardenByTeacherId(Long Id) {
+        return kinderGardenRepository.findByTeacherId(Id);
     }
 }

@@ -1,7 +1,13 @@
 package com.example.JJCoding.Controller;
 
+import com.example.JJCoding.DTO.KinderGardenDTO;
+import com.example.JJCoding.Entity.KinderGardenEntity;
+import com.example.JJCoding.Entity.TeacherEntity;
+import com.example.JJCoding.Repository.KinderGardenRepository;
+import com.example.JJCoding.Service.KinderGardenService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.autoconfigure.neo4j.Neo4jProperties;
 import org.springframework.ui.Model;
 import com.example.JJCoding.DTO.TeacherDTO;
 import com.example.JJCoding.Service.TeacherService;
@@ -12,12 +18,22 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.security.Principal;
+import java.util.List;
+
 @Controller
 @RequiredArgsConstructor
 public class ChickController {
 
     @Autowired
     private TeacherService teacherService;
+
+    @Autowired
+    private KinderGardenService kinderGardenService;
+
+    @Autowired
+    private KinderGardenRepository kinderGardenRepository;
+
     private TeacherDTO teacherDTO;
 
     @GetMapping("/chick")
@@ -96,7 +112,10 @@ public class ChickController {
     }
 
     @GetMapping("/myinfo")
-    public String myinfo(Model model) {
+    public String myinfo(Model model, HttpSession session) {
+        Long teacherId = (Long) session.getAttribute("Id");
+        List<KinderGardenEntity> kinderGardenEntityList = kinderGardenService.getKinderGardenByTeacherId(teacherId);
+        model.addAttribute("kinderGardenEntityList", kinderGardenEntityList);
         return "/chick/t_myinfo";
     }
 
@@ -107,11 +126,14 @@ public class ChickController {
         TeacherDTO loginResult = teacherService.login(teacherDTO);
         if (loginResult != null) {
             //로그인 성공
+            session.setAttribute("Id", loginResult.getId());
             session.setAttribute("teacherId", loginResult.getTeacherId());
             session.setAttribute("teacherPass", loginResult.getTeacherPass());
             session.setAttribute("teacherName", loginResult.getTeacherName());
             session.setAttribute("teacherPhoneNumber", loginResult.getTeacherPhoneNumber());
 
+
+            System.out.println("Id: " + session.getAttribute("Id"));
             System.out.println("teacherId: " + session.getAttribute("teacherId"));
             System.out.println("teacherPass: " + session.getAttribute("teacherPass"));
             System.out.println("teacherName: " + session.getAttribute("teacherName"));
