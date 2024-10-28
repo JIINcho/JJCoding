@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.security.Principal;
+import java.util.Collections;
 import java.util.List;
 
 @Controller
@@ -115,6 +116,7 @@ public class ChickController {
     public String myinfo(Model model, HttpSession session) {
         Long teacherId = (Long) session.getAttribute("Id");
         List<KinderGardenEntity> kinderGardenEntityList = kinderGardenService.getKinderGardenByTeacherId(teacherId);
+        Collections.reverse(kinderGardenEntityList);
         model.addAttribute("kinderGardenEntityList", kinderGardenEntityList);
         return "/chick/t_myinfo";
     }

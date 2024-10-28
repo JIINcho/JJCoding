@@ -37,17 +37,14 @@
         // 성공일 경우 3초 후에 페이지 이동
         var status = /*[[${status}]]*/ '[[${status}]]';  // Thymeleaf가 이곳에 status 값을 넣음
         if (status === 'success') {
-            setTimeout(function() {
-                window.location.href = "/myinfo";  // 성공 시 이동할 페이지
-            }, 3000);  // 3초 후 이동
+            window.location.href = "/myinfo";  // 성공 시 이동할 페이지
         } else {
             // 실패 시 로그인 페이지로 이동
             setTimeout(function() {
                 window.location.href = "/chick/login";
-            }, 3000);
+            }, 1000);
         }
     }
-
     // 페이지 로드 후 모달을 자동으로 띄움
     window.onload = function() {
         showModal();
