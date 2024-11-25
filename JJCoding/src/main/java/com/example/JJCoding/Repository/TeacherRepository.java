@@ -10,4 +10,6 @@ import java.util.Optional;
 public interface TeacherRepository extends JpaRepository<TeacherEntity, Long> {
     //선생님의 아이디를 찾음
     Optional<TeacherEntity> findByTeacherId(String teacherId);
+
+    Optional<TeacherEntity> findById(Long id);
 }

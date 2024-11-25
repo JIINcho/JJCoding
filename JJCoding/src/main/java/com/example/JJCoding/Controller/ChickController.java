@@ -1,13 +1,16 @@
 package com.example.JJCoding.Controller;
 
+import com.example.JJCoding.DTO.EditTeacherDTO;
 import com.example.JJCoding.DTO.KinderGardenDTO;
 import com.example.JJCoding.Entity.KinderGardenEntity;
 import com.example.JJCoding.Entity.TeacherEntity;
 import com.example.JJCoding.Repository.KinderGardenRepository;
+import com.example.JJCoding.Repository.TeacherRepository;
 import com.example.JJCoding.Service.KinderGardenService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.neo4j.Neo4jProperties;
+import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import com.example.JJCoding.DTO.TeacherDTO;
 import com.example.JJCoding.Service.TeacherService;
@@ -26,16 +29,18 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ChickController {
 
-    @Autowired
-    private TeacherService teacherService;
 
-    @Autowired
-    private KinderGardenService kinderGardenService;
+    private final TeacherService teacherService;
 
-    @Autowired
-    private KinderGardenRepository kinderGardenRepository;
+    private final KinderGardenService kinderGardenService;
+
+    private final KinderGardenRepository kinderGardenRepository;
 
     private TeacherDTO teacherDTO;
+
+    private EditTeacherDTO editTeacherDTO;
+
+    private final TeacherRepository teacherRepository;
 
     @GetMapping("/chick")
     public String Chick(Model model) {
@@ -118,6 +123,9 @@ public class ChickController {
         List<KinderGardenEntity> kinderGardenEntityList = kinderGardenService.getKinderGardenByTeacherId(teacherId);
         Collections.reverse(kinderGardenEntityList);
         model.addAttribute("kinderGardenEntityList", kinderGardenEntityList);
+
+        TeacherEntity teacher = teacherRepository.findById(teacherId).get();
+        model.addAttribute("teacher", teacher);
         return "/chick/t_myinfo";
     }
 
@@ -156,5 +164,37 @@ public class ChickController {
     @GetMapping("/check-teacherID")
     public boolean checkTeacherID(@RequestParam String teacherID) {
         return teacherService.TeacherIdCheck(teacherID);
+    }
+
+    @GetMapping("/editTeacher")
+    public String editTeacher(Model model, HttpSession session) {
+        //현재 세션에 있는 정보 가져오기
+        Long teacherId = (Long) session.getAttribute("Id");
+
+        TeacherEntity teacher = teacherRepository.findById(teacherId).get();
+
+        model.addAttribute("teacher", teacher);
+
+        return "/chick/editTeacher";
+    }
+
+
+    //선생님 정보 수정
+    @PostMapping("/editTeacher")
+    public String editTeacher(@ModelAttribute EditTeacherDTO editteacherDTO, HttpSession session, Model model) {
+        //현재 세션에 있는 정보 가져오기
+        Long teacherId = (Long) session.getAttribute("Id");
+
+        TeacherEntity teacher = teacherRepository.findById(teacherId).get();
+
+        teacher.setTeacherName(editteacherDTO.getTeacherName());
+        teacher.setTeacherGender(editteacherDTO.getTeacherGender());
+        teacher.setTeacherPhoneNumber(editteacherDTO.getTeacherPhoneNumber());
+
+        teacherRepository.save(teacher);
+
+        model.addAttribute("teacher", teacher);
+
+        return "redirect:/myinfo";
     }
 }
