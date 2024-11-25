@@ -1,8 +1,10 @@
 package com.example.JJCoding.Service;
 
+import com.example.JJCoding.DTO.EditTeacherDTO;
 import com.example.JJCoding.DTO.TeacherDTO;
 import com.example.JJCoding.Entity.TeacherEntity;
 import com.example.JJCoding.Repository.TeacherRepository;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,8 +16,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class TeacherService {
 
-    @Autowired
-    private TeacherRepository teacherRepository;
+    private final TeacherRepository teacherRepository;
 
     @Transactional
     public void save(TeacherDTO teacherDTO) {
@@ -46,5 +47,4 @@ public class TeacherService {
     public boolean TeacherIdCheck(String teacherId) {
         return teacherRepository.findByTeacherId(teacherId).isPresent();
     }
-
 }

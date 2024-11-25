@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정보 입력</title>
+    <link rel="stylesheet" href="/css/chick/editTeacher.css">
+</head>
+<body>
+<div class="box">
+    <p class="hello">수정하실 정보가<br>있으실까요? :&#41</p>
+    <svg class="chick" xmlns="http://www.w3.org/2000/svg" width="71" height="69" viewBox="0 0 71 69" fill="none">
+        <path d="M5.42361 37.0549L9.86111 30.6666L15.7778 36.4166L23.6667 32.5833L29.5833 38.3333L37.4722 26.8333L45.3611 32.5833L51.2778 30.6666L55.2222 36.4166L61.1389 30.6666L65.0833 38.3333L61.1389 51.75L39.4444 61.3333L17.75 57.5L5.91667 46L5.42361 37.0549Z" fill="#99AAB5"/>
+        <path d="M59.0799 28.198C59.1213 27.6479 59.1667 27.0978 59.1667 26.5382C59.1667 15.1474 50.6388 5.71551 39.4523 3.8851C41.7973 3.38676 43.4579 2.90951 41.4167 1.91668C39.2176 0.847181 37.0186 2.16393 35.502 3.53818H35.498C33.9814 2.16393 31.7843 0.847181 29.5833 1.91668C27.5421 2.90951 29.2027 3.38676 31.5477 3.88318C20.3632 5.7136 11.8333 15.1455 11.8333 26.5382C11.8333 27.0978 11.8787 27.6479 11.9201 28.1999C10.9695 40.8499 -0.510811 59.4167 35.5 59.4167C71.5108 59.4167 60.0305 40.8499 59.0799 28.198Z" fill="#FFCC4D"/>
+        <path d="M41.4167 26.8333C41.4167 30.0092 38.768 30.6666 35.5 30.6666C32.232 30.6666 29.5833 30.0092 29.5833 26.8333C29.5833 25.3083 30.2067 23.8458 31.3163 22.7674C32.4259 21.6891 33.9308 21.0833 35.5 21.0833C37.0692 21.0833 38.5741 21.6891 39.6837 22.7674C40.7933 23.8458 41.4167 25.3083 41.4167 26.8333Z" fill="#F4900C"/>
+        <path d="M22.6806 24.9167C24.3144 24.9167 25.6389 23.6295 25.6389 22.0417C25.6389 20.4539 24.3144 19.1667 22.6806 19.1667C21.0467 19.1667 19.7222 20.4539 19.7222 22.0417C19.7222 23.6295 21.0467 24.9167 22.6806 24.9167Z" fill="#662113"/>
+        <path d="M48.3194 24.9167C49.9533 24.9167 51.2778 23.6295 51.2778 22.0417C51.2778 20.4539 49.9533 19.1667 48.3194 19.1667C46.6856 19.1667 45.3611 20.4539 45.3611 22.0417C45.3611 23.6295 46.6856 24.9167 48.3194 24.9167Z" fill="#662113"/>
+        <path d="M61.1389 47.9167L55.2222 46L47.3333 57.5L41.4167 47.9167L37.4722 51.75L29.5833 47.9167L23.6667 55.5833L17.75 44.0833L11.8333 47.9167L5.33683 33.0338C4.41569 35.6662 3.94531 38.4278 3.94444 41.2083C3.94444 56.5589 18.0734 69 35.5 69C52.9266 69 67.0556 56.5589 67.0556 41.2083C67.0556 38.824 66.6789 36.524 66.0359 34.3141L61.1389 47.9167Z" fill="#E1E8ED"/>
+    </svg>
+    <form action="/editTeacher" method="post">
+        <div class="textbox1">
+            <p class="Q1">선생님의 이름은 무엇인가요?</p>
+        </div>
+        <svg class="egg" xmlns="http://www.w3.org/2000/svg" width="62" height="53" viewBox="0 0 62 53" fill="none">
+            <path d="M51.925 24.6781C49.5031 9.77187 38.4594 1.65625 31 1.65625C23.5406 1.65625 12.4969 9.77187 10.075 24.6781C7.74999 39.5844 15.4031 51.3438 31 51.3438C46.5969 51.3438 54.25 39.5844 51.925 24.6781Z" fill="#FFD4B3"/>
+            <path opacity="0.33" d="M51.925 24.6781C49.9875 12.9187 42.7219 5.38279 36.0375 2.73279C40.5906 6.62498 44.6594 12.7531 45.9187 21.0344C48.3406 35.9406 40.6875 47.7 24.9937 47.7C21.6031 47.7 18.6 47.1203 16.0812 46.1265C19.6656 49.439 24.7031 51.3437 31 51.3437C46.5969 51.3437 54.25 39.5844 51.925 24.6781Z" fill="#D3976E"/>
+        </svg>
+        <div class="textbox2">
+            <input type= "text" class= "A1" id="nameInput" maxlength="10" placeholder="성명을 입력해주세요." autocomplete="off" name="teacherName" th:value="${teacher.teacherName}">
+        </div>
+        <svg class="chick1" xmlns="http://www.w3.org/2000/svg" width="71" height="69" viewBox="0 0 71 69" fill="none">
+            <path d="M5.42361 37.0549L9.86111 30.6666L15.7778 36.4166L23.6667 32.5833L29.5833 38.3333L37.4722 26.8333L45.3611 32.5833L51.2778 30.6666L55.2222 36.4166L61.1389 30.6666L65.0833 38.3333L61.1389 51.75L39.4444 61.3333L17.75 57.5L5.91667 46L5.42361 37.0549Z" fill="#99AAB5"/>
+            <path d="M59.0799 28.198C59.1213 27.6479 59.1667 27.0978 59.1667 26.5382C59.1667 15.1474 50.6388 5.71551 39.4523 3.8851C41.7973 3.38676 43.4579 2.90951 41.4167 1.91668C39.2176 0.847181 37.0186 2.16393 35.502 3.53818H35.498C33.9814 2.16393 31.7843 0.847181 29.5833 1.91668C27.5421 2.90951 29.2027 3.38676 31.5477 3.88318C20.3632 5.7136 11.8333 15.1455 11.8333 26.5382C11.8333 27.0978 11.8787 27.6479 11.9201 28.1999C10.9695 40.8499 -0.510811 59.4167 35.5 59.4167C71.5108 59.4167 60.0305 40.8499 59.0799 28.198Z" fill="#FFCC4D"/>
+            <path d="M41.4167 26.8333C41.4167 30.0092 38.768 30.6666 35.5 30.6666C32.232 30.6666 29.5833 30.0092 29.5833 26.8333C29.5833 25.3083 30.2067 23.8458 31.3163 22.7674C32.4259 21.6891 33.9308 21.0833 35.5 21.0833C37.0692 21.0833 38.5741 21.6891 39.6837 22.7674C40.7933 23.8458 41.4167 25.3083 41.4167 26.8333Z" fill="#F4900C"/>
+            <path d="M22.6806 24.9167C24.3144 24.9167 25.6389 23.6295 25.6389 22.0417C25.6389 20.4539 24.3144 19.1667 22.6806 19.1667C21.0467 19.1667 19.7222 20.4539 19.7222 22.0417C19.7222 23.6295 21.0467 24.9167 22.6806 24.9167Z" fill="#662113"/>
+            <path d="M48.3194 24.9167C49.9533 24.9167 51.2778 23.6295 51.2778 22.0417C51.2778 20.4539 49.9533 19.1667 48.3194 19.1667C46.6856 19.1667 45.3611 20.4539 45.3611 22.0417C45.3611 23.6295 46.6856 24.9167 48.3194 24.9167Z" fill="#662113"/>
+            <path d="M61.1389 47.9167L55.2222 46L47.3333 57.5L41.4167 47.9167L37.4722 51.75L29.5833 47.9167L23.6667 55.5833L17.75 44.0833L11.8333 47.9167L5.33683 33.0338C4.41569 35.6662 3.94531 38.4278 3.94444 41.2083C3.94444 56.5589 18.0734 69 35.5 69C52.9266 69 67.0556 56.5589 67.0556 41.2083C67.0556 38.824 66.6789 36.524 66.0359 34.3141L61.1389 47.9167Z" fill="#E1E8ED"/>
+        </svg>
+        <div class="textbox3">
+            <p class="Q2">성별은 무엇인가요?</p>
+        </div>
+        <svg class="egg1" xmlns="http://www.w3.org/2000/svg" width="62" height="53" viewBox="0 0 62 53" fill="none">
+            <path d="M51.925 24.6781C49.5031 9.77187 38.4594 1.65625 31 1.65625C23.5406 1.65625 12.4969 9.77187 10.075 24.6781C7.74999 39.5844 15.4031 51.3438 31 51.3438C46.5969 51.3438 54.25 39.5844 51.925 24.6781Z" fill="#FFD4B3"/>
+            <path opacity="0.33" d="M51.925 24.6781C49.9875 12.9187 42.7219 5.38279 36.0375 2.73279C40.5906 6.62498 44.6594 12.7531 45.9187 21.0344C48.3406 35.9406 40.6875 47.7 24.9937 47.7C21.6031 47.7 18.6 47.1203 16.0812 46.1265C19.6656 49.439 24.7031 51.3437 31 51.3437C46.5969 51.3437 54.25 39.5844 51.925 24.6781Z" fill="#D3976E"/>
+        </svg>
+        <button type="button" class="manbtn" id="manbtn" onclick="selectGender('manbtn')">남자</button>
+        <button type="button" class="womanbtn" id="womanbtn" onclick="selectGender('womanbtn')">여자</button>
+        <input type="hidden" id="genderInput" name="teacherGender" th:value="${teacher.teacherGender}">
+
+        <svg class="chick2" xmlns="http://www.w3.org/2000/svg" width="71" height="69" viewBox="0 0 71 69" fill="none">
+            <path d="M5.42361 37.0549L9.86111 30.6666L15.7778 36.4166L23.6667 32.5833L29.5833 38.3333L37.4722 26.8333L45.3611 32.5833L51.2778 30.6666L55.2222 36.4166L61.1389 30.6666L65.0833 38.3333L61.1389 51.75L39.4444 61.3333L17.75 57.5L5.91667 46L5.42361 37.0549Z" fill="#99AAB5"/>
+            <path d="M59.0799 28.198C59.1213 27.6479 59.1667 27.0978 59.1667 26.5382C59.1667 15.1474 50.6388 5.71551 39.4523 3.8851C41.7973 3.38676 43.4579 2.90951 41.4167 1.91668C39.2176 0.847181 37.0186 2.16393 35.502 3.53818H35.498C33.9814 2.16393 31.7843 0.847181 29.5833 1.91668C27.5421 2.90951 29.2027 3.38676 31.5477 3.88318C20.3632 5.7136 11.8333 15.1455 11.8333 26.5382C11.8333 27.0978 11.8787 27.6479 11.9201 28.1999C10.9695 40.8499 -0.510811 59.4167 35.5 59.4167C71.5108 59.4167 60.0305 40.8499 59.0799 28.198Z" fill="#FFCC4D"/>
+            <path d="M41.4167 26.8333C41.4167 30.0092 38.768 30.6666 35.5 30.6666C32.232 30.6666 29.5833 30.0092 29.5833 26.8333C29.5833 25.3083 30.2067 23.8458 31.3163 22.7674C32.4259 21.6891 33.9308 21.0833 35.5 21.0833C37.0692 21.0833 38.5741 21.6891 39.6837 22.7674C40.7933 23.8458 41.4167 25.3083 41.4167 26.8333Z" fill="#F4900C"/>
+            <path d="M22.6806 24.9167C24.3144 24.9167 25.6389 23.6295 25.6389 22.0417C25.6389 20.4539 24.3144 19.1667 22.6806 19.1667C21.0467 19.1667 19.7222 20.4539 19.7222 22.0417C19.7222 23.6295 21.0467 24.9167 22.6806 24.9167Z" fill="#662113"/>
+            <path d="M48.3194 24.9167C49.9533 24.9167 51.2778 23.6295 51.2778 22.0417C51.2778 20.4539 49.9533 19.1667 48.3194 19.1667C46.6856 19.1667 45.3611 20.4539 45.3611 22.0417C45.3611 23.6295 46.6856 24.9167 48.3194 24.9167Z" fill="#662113"/>
+            <path d="M61.1389 47.9167L55.2222 46L47.3333 57.5L41.4167 47.9167L37.4722 51.75L29.5833 47.9167L23.6667 55.5833L17.75 44.0833L11.8333 47.9167L5.33683 33.0338C4.41569 35.6662 3.94531 38.4278 3.94444 41.2083C3.94444 56.5589 18.0734 69 35.5 69C52.9266 69 67.0556 56.5589 67.0556 41.2083C67.0556 38.824 66.6789 36.524 66.0359 34.3141L61.1389 47.9167Z" fill="#E1E8ED"/>
+        </svg>
+        <div class="textbox4">
+            <p class="Q3">선생님의 전화번호를 알려주세요!</p>
+            <p class="notice">해당되는 학부모분들에게만 보여드립니다 걱정하지 마세요!</p>
+        </div>
+        <svg class="egg2" xmlns="http://www.w3.org/2000/svg" width="62" height="53" viewBox="0 0 62 53" fill="none">
+            <path d="M51.925 24.6781C49.5031 9.77187 38.4594 1.65625 31 1.65625C23.5406 1.65625 12.4969 9.77187 10.075 24.6781C7.74999 39.5844 15.4031 51.3438 31 51.3438C46.5969 51.3438 54.25 39.5844 51.925 24.6781Z" fill="#FFD4B3"/>
+            <path opacity="0.33" d="M51.925 24.6781C49.9875 12.9187 42.7219 5.38279 36.0375 2.73279C40.5906 6.62498 44.6594 12.7531 45.9187 21.0344C48.3406 35.9406 40.6875 47.7 24.9937 47.7C21.6031 47.7 18.6 47.1203 16.0812 46.1265C19.6656 49.439 24.7031 51.3437 31 51.3437C46.5969 51.3437 54.25 39.5844 51.925 24.6781Z" fill="#D3976E"/>
+        </svg>
+        <div class="textbox5">
+            <input type= "number" class= "A3" id="phoneNumberInput" maxlength="20" placeholder="숫자만 입력해주세요." autocomplete="off" name="teacherPhoneNumber" th:value="${teacher.teacherPhoneNumber}">
+        </div>
+        <button type="submit" class="okbtn">
+            <p class="ok">수정</p>
+        </button>
+    </form>
+</div>
+
+<script>
+
+    document.querySelector('.manbtn').addEventListener('click', handleButtonClick1);
+    document.querySelector('.womanbtn').addEventListener('click', handleButtonClick2);
+
+    let inputValue1 = ''; // A1 입력값을 추적할 변수
+    let hasInput1 = false; // A1 입력값이 있는지 여부를 추적하는 변수
+    let hasInput2 = false; // A2 입력값이 있는지 여부를 추적하는 변수
+
+    function selectGender(genderId) {
+        const genderInput = document.getElementById("genderInput");
+        const manButton = document.getElementById("manbtn");
+        const womanButton = document.getElementById("womanbtn");
+
+        if (genderId === "manbtn") {
+            genderInput.value = "남자";
+            manButton.classList.add("selected");
+            womanButton.classList.remove("selected");
+        } else if (genderId === "womanbtn") {
+            genderInput.value = "여자";
+            womanButton.classList.add("selected");
+            manButton.classList.remove("selected");
+        }
+    }
+
+    function handleInputChange1() {
+        inputValue1 = document.querySelector('.A1').value.trim();
+
+        // 입력값이 비어 있지 않으면 요소들을 보이도록 설정
+        if (inputValue1 !== '') {
+            hasInput1 = true;
+            showElements1();
+        }
+    }
+
+    let isManSelected = false;
+    let isWomanSelected = false;
+
+    function handleButtonClick1() {
+        const manBtn = document.querySelector('.manbtn');
+        const womanBtn = document.querySelector('.womanbtn');
+
+        if (isManSelected) {
+            // 남자 버튼이 이미 선택되었으면 해제
+            manBtn.style.backgroundColor = '#F5F5F5';
+            manBtn.style.color = '#828282';
+            isManSelected = false;
+        } else {
+            // 남자 버튼을 활성화하고 여자 버튼을 해제
+            manBtn.style.backgroundColor = '#FFF7EE';
+            manBtn.style.color = '#828282';
+            womanBtn.style.backgroundColor = '#F5F5F5';
+            womanBtn.style.color = '#828282';
+            isManSelected = true;
+            isWomanSelected = false;
+        }
+
+        showElements2();
+    }
+
+    function handleButtonClick2() {
+        const manBtn = document.querySelector('.manbtn');
+        const womanBtn = document.querySelector('.womanbtn');
+
+        if (isWomanSelected) {
+            // 여자 버튼이 이미 선택되었으면 해제
+            womanBtn.style.backgroundColor = '#F5F5F5';
+            womanBtn.style.color = '#828282';
+            isWomanSelected = false;
+        } else {
+            // 여자 버튼을 활성화하고 남자 버튼을 해제
+            womanBtn.style.backgroundColor = '#FFF7EE';
+            womanBtn.style.color = '#828282';
+            manBtn.style.backgroundColor = '#F5F5F5';
+            manBtn.style.color = '#828282';
+            isWomanSelected = true;
+            isManSelected = false;
+        }
+
+        showElements2();
+    }
+
+
+
+    function selectGender(gender) {
+        document.getElementsByName('teacherGender').forEach(button => {
+            button.classList.remove('selected'); // Remove selection from all buttons
+        });
+        document.getElementById(gender).classList.add('selected'); // Add selection to the clicked button
+        document.getElementById('genderInput').value = gender === 'manbtn' ? 'M' : 'W'; // Set hidden input value
+    }
+
+</script>
+</body>
+</html>
