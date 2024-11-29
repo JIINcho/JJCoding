@@ -1,0 +1,162 @@
+body {
+
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff; /* body의 배경색을 흰색으로 설정 */
+}
+
+.box {
+    width: 393px;
+    height: 852px;
+    background-color: #ffffff;
+    margin: 0 auto; /* 수평 중앙 정렬 */
+    position: relative; /* 위치 기준을 상대적으로 설정 */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+.myinfobox{
+    top: 82px;
+    left: 26px;
+    position: absolute;
+    width: 338px;
+    height: 174px;
+    border-radius: 15px;
+    background: #FFE2E1;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.chicken{
+    top: 21px;
+    left: 14px;
+    position: absolute;
+    width: 68px;
+    height: 64px;
+}
+.nametxt{
+    top: 23px;
+    left: 89px;
+    position: absolute;
+    color: #3B3B3B;
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+}
+.pnumtxt{
+    top: 45px;
+    left: 89px;
+    position: absolute;
+    color: #3B3B3B;
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+}
+.modifybtn{
+    top: 16px;
+    left: 300px;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+}
+.codebtn{
+    top: 95px;
+    left: 18px;
+    position: absolute;
+    width: 204px;
+    height: 42px;
+    border-radius: 20px;
+    border: 1px solid #FFA5A2;
+    background: #FFF;
+}
+.okbtn{
+    top: 95px;
+    left: 239px;
+    position: absolute;
+    width: 73px;
+    height: 42px;
+    border-radius: 20px;
+    border: 1px solid #FFA5A2;
+    background: #FFF;
+}
+.btntxt1{
+    top: -2px;
+    left: 63px;
+    position: absolute;
+    color: #FFA5A2;
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+}
+.btntxt2{
+    top: -2px;
+    left: 24px;
+    position: absolute;
+    color: #FFA5A2;
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+}
+.noticetxt{
+    top: 138px;
+    left: 25px;
+    position: absolute;
+    color: #737373;
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+}
+.addkidbtn{
+    top: 292px;
+    left: 30px;
+    position: absolute;
+    background: none;
+    border: none;
+    color: #000;
+    font-family: Pretendard;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+}
+.listbtn1{
+    top: 333px;
+    left: 27px;
+    position: absolute;
+    width: 337px;
+    height: 53px;
+    border-radius: 10px;
+    background: #FEE;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border: none;
+}
+.name{
+    position: absolute;
+    top: 5px;
+    left: 30px;
+    color: #5B5B5B;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+}
+.gender{
+    position: absolute;
+    top: 5px;
+    right: 36px;
+    color: #5B5B5B;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+}
+
