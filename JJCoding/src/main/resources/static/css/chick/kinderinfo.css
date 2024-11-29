@@ -17,8 +17,40 @@ body {
     overflow: hidden;
 }
 .title1{
-    color: #F4900C;
+    color: #474747;
     font-family: Pretendard;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 27px; /* 135% */
+    letter-spacing: -0.31px;
+    position: absolute;
+    top: 50px;
+    left:72px;
+}
+.title3{
+    color: #474747;
+    font-family: Pretendard;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 27px; /* 135% */
+    letter-spacing: -0.31px;
+    position: absolute;
+    top: 80px;
+    left: 72px;
+}
+.image1{
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 27px; /* 135% */
+    letter-spacing: -0.31px;
+    position: absolute;
+    top: 50px;
+    left: 36px;
+}
+.image2{
     font-size: 25px;
     font-style: normal;
     font-weight: 700;
@@ -29,7 +61,7 @@ body {
     left: 36px;
 }
 .authcode{
-    color: #767676;
+    color: #BF2626;
     font-family: Pretendard;
     font-size: 15px;
     font-style: normal;
@@ -37,8 +69,18 @@ body {
     line-height: 27px; /* 135% */
     letter-spacing: -0.31px;
     position: absolute;
-    top: 120px;
-    left: 36px;
+    top: 155px;
+    left: 185px;
+}
+.image3{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 27px; /* 135% */
+    letter-spacing: -0.31px;
+    position: absolute;
+    top: 150px;
+    left: 165px;
 }
 .title2{
     color: #000;
@@ -49,7 +91,7 @@ body {
     line-height: 27px; /* 135% */
     letter-spacing: -0.31px;
     position: absolute;
-    top: 180px;
+    top: 150px;
     left: 36px;
 }
 .btn1{
@@ -61,7 +103,7 @@ body {
     background: #FEE;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     position: absolute;
-    top: 243px;
+    top: 210px;
     left: 36px;
 }
 .name1{

@@ -1,20 +1,28 @@
 package com.example.JJCoding.Controller;
 
 import com.example.JJCoding.DTO.KinderGardenDTO;
+import com.example.JJCoding.Entity.KinderGardenEntity;
+import com.example.JJCoding.Repository.KinderGardenRepository;
 import com.example.JJCoding.Service.KinderGardenService;
+import jakarta.persistence.Id;
 import jakarta.servlet.http.HttpSession;
+import jakarta.validation.constraints.Null;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @Controller
 @RequiredArgsConstructor
 public class KinderController {
 
     private final KinderGardenService kinderGardenService;
+    private final KinderGardenRepository kinderGardenRepository;
 
     @GetMapping("/addkinder")
     public String addkinder(Model model) {
@@ -23,7 +31,7 @@ public class KinderController {
 
     @GetMapping("/kinderdetail")
     public String kinderdetail(Model model) {
-        return "/chick/c_info";
+        return "/chick/kinderinfo";
     }
 
     @PostMapping("/addkinder")
@@ -37,6 +45,16 @@ public class KinderController {
             return "error"; // 오류 페이지로 이동
         }
     }
-    //test123
+
+    //아이 상세정보
+    @PostMapping("/kindergarden/detail")
+    public String kindergardendetail(@RequestParam("id") Long Id, Model model) {
+
+        KinderGardenEntity kinderGarden = kinderGardenRepository.findById(Id).orElse(null);
+
+        model.addAttribute("kinderGarden", kinderGarden);
+
+        return "/chick/kinderinfo";
+    }
 
 }
