@@ -69,7 +69,7 @@ body {
     height: 54px;
     position: absolute;
     top: 770px;
-    right: 190px;
+    left: 100px;
     border: none;
     border-radius: 15px;
     font-size: 23px;
@@ -83,7 +83,7 @@ body {
     height: 54px;
     position: absolute;
     top: 770px;
-    right: 90px;
+    left: 200px;
     border: none;
     border-radius: 15px;
     font-size: 23px;
@@ -97,5 +97,5 @@ body {
     color: #000;
     position: absolute;
     top: 760px;
-    left: 198px;
+    left: 185px;
 }

@@ -53,44 +53,37 @@ body {
     top: 281.5px;
     margin-left: -63px;
 }
-.talklogin {
-    width: 223px;
-    height: 54px;
-    position: absolute;
-    top: 747px;
-    left: 85px;
-}
 .chicken {
     width: 239.322px;
     height: 280.856px;
     flex-shrink: 0;
     position: absolute;
-    top: 333px;
-    left: 165px;
+    top: 363px;
+    left: 155px;
 }
 .chicken1 {
     width: 53.829px;
     height: 305.582px;
     flex-shrink: 0;
     position: absolute;
-    top: 293px;
-    left: 270px;
+    top: 323px;
+    left: 260px;
 }
 .chicken2 {
     width: 161px;
     height: 40px;
     flex-shrink: 0;
     position: absolute;
-    top: 423px;
-    left: 215px;
+    top: 453px;
+    left: 205px;
 }
 .chicken3 {
     width: 111.947px;
     height: 44.928px;
     flex-shrink: 0;
     position: absolute;
-    top: 446px;
-    left: 240px;
+    top: 476px;
+    left: 230px;
     z-index: 2;
 }
 .chicken4 {
@@ -98,16 +91,43 @@ body {
     height: 41.945px;
     flex-shrink: 0;
     position: absolute;
-    top: 472px;
-    left: 240px;
+    top: 502px;
+    left: 230px;
     z-index: 1;
 }
-button {
+.loginbtn {
     background: none;
+    width: 80px;
+    height: 54px;
+    position: absolute;
+    top: 770px;
+    left: 100px;
     border: none;
-    padding: 0;
-    cursor: pointer;
-    /* 기본 버튼 스타일 숨기기 */
-    appearance: none;
-    -webkit-appearance: none;
+    border-radius: 15px;
+    font-size: 23px;
+    font-family: "Pretendard";
+    font-weight: 500;
+    text-align: center;
+}
+.signinbtn{
+    background: none;
+    width: 100px;
+    height: 54px;
+    position: absolute;
+    top: 770px;
+    left: 200px;
+    border: none;
+    border-radius: 15px;
+    font-size: 23px;
+    font-family: "Pretendard";
+    font-weight: 500;
+    text-align: center;
+}
+.juststick{
+    font-family: "Pretendard";
+    font-size: 23px;
+    color: #000;
+    position: absolute;
+    top: 760px;
+    left: 185px;
 }
