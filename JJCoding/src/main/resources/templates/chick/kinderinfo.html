@@ -9,8 +9,12 @@
 </head>
 <body>
 <div class="box">
-    <p class="title1">삐약이네 유치원 병아리반</p>
-    <p class="authcode">발급 코드 - (정보없음)</p>
+    <p class="image1">🏡</p>
+    <p class="title1" th:text="${kinderGarden.kindergardenName}">삐약이네 유치원</p>
+    <p class="image2">🔅</p>
+    <p class="title3" th:text="${kinderGarden.kindergardenClass}">병아리반</p>
+    <p class="image3">📍</p>
+    <p class="authcode" th:text="${kinderGarden.kindergardenRandomcode}">발급 코드</p>
     <p class="title2">원생 목록 확인하기</p>
     <button class="btn1">
         <p class="name1">이름</p> <p class="gender1">성별</p>

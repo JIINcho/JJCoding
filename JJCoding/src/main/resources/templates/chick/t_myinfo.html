@@ -30,10 +30,19 @@
         <p>+ 유치원 추가하기</p>
     </button>
     <div class="kinderinfobox">
-        <button class="listbtn1" th:each="kinderGarden : ${kinderGardenEntityList}" style="margin-top: 12px;">
-            <p class="k_name" th:text="${kinderGarden.kindergardenName}">삐약이네 유치원</p>
-            <p class="c_name" th:text="${kinderGarden.kindergardenClass}">병아리 반</p>
-        </button>
+        <th:block th:each="kinderGarden : ${kinderGardenEntityList}">
+            <!-- 각 유치원별 고유 폼 생성 -->
+            <form th:action="@{/kindergarden/detail}" method="post" style="margin-top: 12px;">
+                <!-- 각 유치원의 ID를 숨겨진 필드로 전송 -->
+                <input type="hidden" name="id" th:value="${kinderGarden.Id}" />
+
+                <!-- 버튼 클릭 시 폼 전송 -->
+                <button type="submit" class="listbtn1">
+                    <p class="k_name" th:text="${kinderGarden.kindergardenName}">유치원 이름</p>
+                    <p class="c_name" th:text="${kinderGarden.kindergardenClass}">반 이름</p>
+                </button>
+            </form>
+        </th:block>
     </div>
     <p class="notice">최근 8개의 등록정보만 나타납니다.</p>
 </div>
