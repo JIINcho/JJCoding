@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff; /* body의 배경색을 흰색으로 설정 */
+}
+.box {
+    width: 393px;
+    height: 852px;
+    background: #D9D9D9; /* box의 기본 배경색을 회색으로 설정*/
+    margin: 0 auto; /* 수평 중앙 정렬 */
+    position: relative; /* 위치 기준을 상대적으로 설정 */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+.Map_InfoBox{
+    top: 580px;
+    position: absolute;
+    width: 393px;
+    height: 280px;
+    border-radius: 15px;
+    background-color: #ffffff;
+}
+.txt1{
+    position: absolute;
+    top: 35px;
+    left: 39px;
+    color: #000;
+    font-family: Pretendard;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 700;
+}
+.txt2{
+    position: absolute;
+    top: 105px;
+    left: 39px;
+    color: #636363;
+    font-family: Pretendard;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+}
+.txt3{
+    position: absolute;
+    top: 135px;
+    left: 39px;
+    color: #454545;
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 27px;
+}
+.nobtn{
+    top: 198px;
+    left: 80px;
+    position: absolute;
+    width: 104px;
+    height: 42px;
+    border-radius: 20px;
+    background: #F5F5F5;
+    border: none;
+    color: #828282;
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+}
+.okbtn{
+    top: 198px;
+    left: 209px;
+    position: absolute;
+    width: 104px;
+    height: 42px;
+    border-radius: 20px;
+    background: #F5F5F5;
+    border: none;
+    color: #828282;
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+}
