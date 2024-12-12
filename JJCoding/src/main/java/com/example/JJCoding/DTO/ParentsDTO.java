@@ -1,15 +1,13 @@
 package com.example.JJCoding.DTO;
 
 import com.example.JJCoding.Entity.ParentsEntity;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @ToString
+@AllArgsConstructor
 public class ParentsDTO {
 
     private Long Id;

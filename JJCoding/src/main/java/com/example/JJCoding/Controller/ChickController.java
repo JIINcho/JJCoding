@@ -150,9 +150,7 @@ public class ChickController {
             System.out.println("teacherPhoneNumber: " + session.getAttribute("teacherPhoneNumber"));
 
 
-            model.addAttribute("message", "로그인에 성공하셨습니다!");
-            model.addAttribute("status", "success");
-            return "message"; // 모달을 띄우기 위한 페이지
+            return "redirect:/myinfo";
         } else {
             // 로그인 실패
             model.addAttribute("message", "아이디 혹은 비밀번호를 다시 확인해주시기 바랍니다.");
