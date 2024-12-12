@@ -10,4 +10,6 @@ import java.util.Optional;
 public interface ParentsRepository extends JpaRepository<ParentsEntity, Long> {
     //부모님의 아이디를 찾음
     Optional<ParentsEntity> findByParentsId(String parentsId);
+
+    Optional<ParentsEntity> findById(Long id);
 }
