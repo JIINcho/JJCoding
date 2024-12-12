@@ -1,6 +1,8 @@
 package com.example.JJCoding.Controller;
 
 
+import com.example.JJCoding.Entity.ParentsEntity;
+import com.example.JJCoding.Repository.ParentsRepository;
 import org.springframework.ui.Model;
 import com.example.JJCoding.DTO.ParentsDTO;
 import com.example.JJCoding.DTO.TeacherDTO;
@@ -19,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class ChickenController {
 
     private final ParentsService parentsService;
+    private final ParentsRepository parentsRepository;
 
     @GetMapping("/chicken")
     public String Chicken(Model model) {
@@ -105,7 +108,10 @@ public class ChickenController {
     }
 
     @GetMapping("/parents/myinfo")
-    public String parentsMyinfo(Model model) {
+    public String parentsMyinfo(Model model, HttpSession session) {
+        Long parentsId = (Long) session.getAttribute("Id");
+        ParentsEntity parents = parentsRepository.findById(parentsId).get();
+        model.addAttribute("parents", parents);
         return "/chicken/p_myinfo";
     }
 
