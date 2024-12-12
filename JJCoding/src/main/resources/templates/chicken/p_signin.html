@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="/css/chick/teachersignin.css">
+</head>
+<body>
+<div class="box">
+    <p class="text1">
+        약관동의
+    </p>
+    <p class="text2">
+        필수항목 및 약관에 동의해주세요.
+    </p>
+    <div class="div1">
+        <button class="checkbtn1" id="selectAll">
+            <svg class="check" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                <path d="M13 21.84C8.112 21.84 4.16 17.888 4.16 13C4.16 8.11197 8.112 4.15997 13 4.15997C17.888 4.15997 21.84 8.11197 21.84 13C21.84 17.888 17.888 21.84 13 21.84ZM13 5.19997C8.684 5.19997 5.2 8.68397 5.2 13C5.2 17.316 8.684 20.8 13 20.8C17.316 20.8 20.8 17.316 20.8 13C20.8 8.68397 17.316 5.19997 13 5.19997Z" fill="#A8A8A8"/>
+                <path d="M11.96 16.848L7.436 12.324L8.164 11.596L11.96 15.392L17.836 9.51599L18.564 10.244L11.96 16.848Z" fill="#A8A8A8"/>
+            </svg>
+        </button>
+        <p class="allchecktext1">전체동의</p>
+    </div>
+    <button class="checkbtn2" id="termCheck1">
+        <svg class="check" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+            <path d="M13 21.84C8.112 21.84 4.16 17.888 4.16 13C4.16 8.11197 8.112 4.15997 13 4.15997C17.888 4.15997 21.84 8.11197 21.84 13C21.84 17.888 17.888 21.84 13 21.84ZM13 5.19997C8.684 5.19997 5.2 8.68397 5.2 13C5.2 17.316 8.684 20.8 13 20.8C17.316 20.8 20.8 17.316 20.8 13C20.8 8.68397 17.316 5.19997 13 5.19997Z" fill="#A8A8A8"/>
+            <path d="M11.96 16.848L7.436 12.324L8.164 11.596L11.96 15.392L17.836 9.51599L18.564 10.244L11.96 16.848Z" fill="#A8A8A8"/>
+        </svg>
+    </button>
+    <p class="checktxt1">서비스 이용약관</p>
+    <div class="essential1" id="essentialtxt1">
+        필수
+    </div>
+    <button class="checkbtn3" id="termCheck2">
+        <svg class="check" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+            <path d="M13 21.84C8.112 21.84 4.16 17.888 4.16 13C4.16 8.11197 8.112 4.15997 13 4.15997C17.888 4.15997 21.84 8.11197 21.84 13C21.84 17.888 17.888 21.84 13 21.84ZM13 5.19997C8.684 5.19997 5.2 8.68397 5.2 13C5.2 17.316 8.684 20.8 13 20.8C17.316 20.8 20.8 17.316 20.8 13C20.8 8.68397 17.316 5.19997 13 5.19997Z" fill="#A8A8A8"/>
+            <path d="M11.96 16.848L7.436 12.324L8.164 11.596L11.96 15.392L17.836 9.51599L18.564 10.244L11.96 16.848Z" fill="#A8A8A8"/>
+        </svg>
+    </button>
+    <p class="checktxt2">개인정보수집/이용 동의</p>
+    <div class="essential2" id="essentialtxt2">
+        필수
+    </div>
+    <button class="checkbtn4" id="termCheck3">
+        <svg class="check" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+            <path d="M13 21.84C8.112 21.84 4.16 17.888 4.16 13C4.16 8.11197 8.112 4.15997 13 4.15997C17.888 4.15997 21.84 8.11197 21.84 13C21.84 17.888 17.888 21.84 13 21.84ZM13 5.19997C8.684 5.19997 5.2 8.68397 5.2 13C5.2 17.316 8.684 20.8 13 20.8C17.316 20.8 20.8 17.316 20.8 13C20.8 8.68397 17.316 5.19997 13 5.19997Z" fill="#A8A8A8"/>
+            <path d="M11.96 16.848L7.436 12.324L8.164 11.596L11.96 15.392L17.836 9.51599L18.564 10.244L11.96 16.848Z" fill="#A8A8A8"/>
+        </svg>
+    </button>
+    <p class="checktxt3">개인정보 제3자 정보제공 동의</p>
+    <div class="essential3" id="essentialtxt3">
+        필수
+    </div>
+    <form method="post" action="/parentsSave1">
+        <p class="text3">아이디</p>
+        <div class="namediv">
+            <input type="text"
+                   class="nameinput"
+                   autocomplete="off"
+                   placeholder="abcd1234"
+                   maxlength="10"
+                   name="parentsId"
+                   required onblur="idCheck()">
+        </div>
+        <button class="verifybtn" type="button">
+            중복확인
+        </button>
+        <p id="resultMessage"></p>
+        <p class="redtext1">
+            영문 소문자와 숫자만 사용하여, 영문 소문자로 시작하는<br>4-12자의 아이디를 입력해주세요.
+        </p>
+        <p class="text4">비밀번호</p>
+        <div class="pwddiv1">
+            <input type="password" class="pwdinput1" autocomplete="off" placeholder="비밀번호" maxlength="50" name="parentsPass">
+        </div>
+        <div class="pwddiv2">
+            <input type="password" class="pwdinput2" autocomplete="off" placeholder="비밀번호 확인" maxlength="50">
+        </div>
+        <p class="redtext2">
+            영문, 숫자, 특수문자를 조합하여 6-20자 이내로 입력해주세요.
+        </p>
+        <button class="okbtn" type="submit">
+            다음으로 >
+        </button>
+    </form>
+</div>
+<script>
+    // 전체 동의 토글 상태 변수
+    let isAllChecked = false;
+
+    // 개별 항목 체크 상태 변수
+    let termChecked1 = false;
+    let termChecked2 = false;
+    let termChecked3 = false;
+
+    let essentialchecked1 = false;
+    let essentialchecked2 = false;
+    let essentialchecked3 = false;
+
+    // 전체 동의 버튼 클릭 이벤트
+    document.getElementById('selectAll').addEventListener('click', function() {
+        // 모든 SVG 아이콘과 텍스트 선택
+        const allSVGs = document.querySelectorAll('svg.check path');
+        const allTexts = document.querySelectorAll('.allchecktext1, .checktxt1, .checktxt2, .checktxt3');
+        const allgrayTexts = document.querySelectorAll('.essential1, .essential2, .essential3');
+
+        if (isAllChecked) {
+            // 전체 해제: 회색으로 돌리기
+            allSVGs.forEach((svgPath) => {
+                svgPath.style.fill = '#A8A8A8'; // 비활성화 색상
+            });
+            allTexts.forEach((text) => {
+                text.style.color = '#A8A8A8'; // 비활성화 텍스트 색상
+            });
+            allgrayTexts.forEach((text) => {
+                text.style.color = '#A8A8A8';
+            });
+            isAllChecked = false;
+            termChecked1 = false;
+            termChecked2 = false;
+            termChecked3 = false;
+            essentialchecked1 = false;
+            essentialchecked2 = false;
+            essentialchecked3 = false;
+        } else {
+            // 전체 선택: 검은색으로 변경
+            allSVGs.forEach((svgPath) => {
+                svgPath.style.fill = 'black'; // 활성화 색상
+            });
+            allTexts.forEach((text) => {
+                text.style.color = 'black'; // 활성화 텍스트 색상
+            });
+            allgrayTexts.forEach((text) => {
+                text.style.color = 'black';
+            });
+            isAllChecked = true;
+            termChecked1 = true;
+            termChecked2 = true;
+            termChecked3 = true;
+            essentialchecked1 = true;
+            essentialchecked2 = true;
+            essentialchecked3 = true;
+        }
+    });
+
+    // 개별 항목 (서비스 이용약관)
+    document.getElementById('termCheck1').addEventListener('click', function() {
+        const svgPaths = this.querySelectorAll('svg path');  // 모든 경로 선택
+        const text = document.querySelector('.checktxt1');
+        const graytext = document.querySelector('.essential1');
+
+        if (termChecked1) {
+            svgPaths.forEach((path) => {
+                path.style.fill = '#A8A8A8'; // 비활성화 색상
+            });
+            text.style.color = '#A8A8A8'; // 비활성화 텍스트 색상
+            graytext.style.color = '#A8A8A8';
+            termChecked1 = false;
+            essentialchecked1 = false;
+        } else {
+            svgPaths.forEach((path) => {
+                path.style.fill = 'black'; // 활성화 색상
+            });
+            text.style.color = 'black'; // 활성화 텍스트 색상
+            graytext.style.color = 'black';
+            termChecked1 = true;
+            essentialchecked1 = true;
+        }
+        updateSelectAll(); // 전체 동의 상태 업데이트
+    });
+
+    // 개별 항목 (개인정보 처리 방침)
+    document.getElementById('termCheck2').addEventListener('click', function() {
+        const svgPaths = this.querySelectorAll('svg path');  // 모든 경로 선택
+        const text = document.querySelector('.checktxt2');
+        const graytext = document.querySelector('.essential2');
+
+        if (termChecked2) {
+            svgPaths.forEach((path) => {
+                path.style.fill = '#A8A8A8'; // 비활성화 색상
+            });
+            text.style.color = '#A8A8A8'; // 비활성화 텍스트 색상
+            graytext.style.color = '#A8A8A8';
+            termChecked2 = false;
+            essentialchecked2 = false;
+        } else {
+            svgPaths.forEach((path) => {
+                path.style.fill = 'black'; // 활성화 색상
+            });
+            text.style.color = 'black'; // 활성화 텍스트 색상
+            graytext.style.color = 'black';
+            termChecked2 = true;
+            essentialchecked2 = true;
+        }
+        updateSelectAll(); // 전체 동의 상태 업데이트
+    });
+
+    // 개별 항목 (개인정보 제3자 제공 동의)
+    document.getElementById('termCheck3').addEventListener('click', function() {
+        const svgPaths = this.querySelectorAll('svg path');  // 모든 경로 선택
+        const text = document.querySelector('.checktxt3');
+        const graytext = document.querySelector('.essential3');
+
+        if (termChecked3) {
+            svgPaths.forEach((path) => {
+                path.style.fill = '#A8A8A8'; // 비활성화 색상
+            });
+            text.style.color = '#A8A8A8'; // 비활성화 텍스트 색상
+            graytext.style.color = '#A8A8A8';
+            termChecked3 = false;
+            essentialchecked3 = false;
+        } else {
+            svgPaths.forEach((path) => {
+                path.style.fill = 'black'; // 활성화 색상
+            });
+            text.style.color = 'black'; // 활성화 텍스트 색상
+            graytext.style.color = 'black';
+            termChecked3 = true;
+            essentialchecked3 = true;
+        }
+        updateSelectAll(); // 전체 동의 상태 업데이트
+    });
+
+    // 개별 항목 체크 상태를 기반으로 전체 동의 상태 업데이트
+    function updateSelectAll() {
+        const selectAllSVGPaths = document.querySelectorAll('#selectAll svg path');  // 모든 경로 선택
+        const selectAllText = document.querySelector('.allchecktext1');
+
+        // 모든 항목이 체크되었는지 확인
+        if (termChecked1 && termChecked2 && termChecked3) {
+            // 개별 항목이 모두 선택되면 전체 동의도 선택됨
+            selectAllSVGPaths.forEach((path) => {
+                path.style.fill = 'black';
+            });
+            selectAllText.style.color = 'black';
+            isAllChecked = true;
+        } else {
+            // 하나라도 해제되면 전체 동의 해제
+            selectAllSVGPaths.forEach((path) => {
+                path.style.fill = '#A8A8A8';
+            });
+            selectAllText.style.color = '#A8A8A8';
+            isAllChecked = false;
+        }
+    }
+
+    const idCheck = () => {
+        const userId = document.getElementById("teacherId").value;
+        const checkResult = document.getElementById("check-result");
+        console.log("입력값:",userId);
+        $.ajax({
+            type: "post",
+            url: "/check-teacherID",
+            data: {
+                "teacherId": teacherId
+            },
+            success: function(res) {
+                if(res == "ok") {
+                    console.log("요청성공", res);
+                    checkResult.style.color = "green";
+                    checkResult.innerHTML = "사용가능한 아이디입니다";
+                }
+                else {
+                    checkResult.style.color = "red";
+                    checkResult.innerHTML = "이미 사용중인 아이디입니다";
+                }
+            },
+            error: function(err) {
+                console.log("에러발생", err);
+            }
+        })
+    }
+</script>
+</body>
+</html>
