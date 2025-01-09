@@ -1,0 +1,294 @@
+body {
+
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff; /* body의 배경색을 흰색으로 설정 */
+}
+
+input::placeholder {
+    color: #B3B3B3;
+    text-align: left;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 27px; /* 180% */
+    letter-spacing: -0.31px;
+}
+
+.box {
+    width: 393px;
+    height: 852px;
+    background-color: #ffffff;
+    margin: 0 auto; /* 수평 중앙 정렬 */
+    position: relative; /* 위치 기준을 상대적으로 설정 */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+.titletxt{
+    position: absolute;
+    top: 106px;
+    left: 32px;
+    color: #000;
+    font-family: Pretendard;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 27px; /* 135% */
+    letter-spacing: -0.31px;
+}
+.txt1{
+    position: absolute;
+    top: 197px;
+    left: 31px;
+    color: #000;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -0.31px;
+}
+.name_div{
+    position: absolute;
+    top: 240px;
+    left: 31px;
+    width: 328px;
+    height: 53px;
+    border-radius: 10px;
+    border: 1px solid #B3B3B3;
+}
+.name_input{
+    color: #000;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    border: none;          /* 테두리 없애기 */
+    background: none;      /* 배경 없애기 */
+    width: 205px;
+    height: 53px;
+    outline: none;         /* 포커스 시 나타나는 외곽선 없애기 */
+    font-size: 16px;       /* 글자 크기 설정 */
+    text-align: left;
+    position: absolute;
+    left: 22px;
+}
+.txt2{
+    position: absolute;
+    top: 308px;
+    left: 31px;
+    color: #000;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -0.31px;
+}
+.birth_year_div{
+    position: absolute;
+    top: 351px;
+    left: 31px;
+    border-radius: 10px;
+    border: 1px solid #B3B3B3;
+    width: 159px;
+    height: 53px;
+}
+.birth_year_menu {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: 300;
+    color: #B3B3B3;
+    padding: 0 10px;
+    border-radius: 10px;
+    appearance: none; /* 기본 화살표 숨기기 (브라우저별 차이 있음) */
+    cursor: pointer;
+    text-align: left;
+} /*드롭다운 메뉴 스타일*/
+.birth_year_div::after {
+    content: '▼';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #B3B3B3;
+    pointer-events: none;
+} /*드롭다운 메뉴 삼각형 꾸미기 스타일*/
+
+
+.birth_month_div{
+    position: absolute;
+    top: 351px;
+    left: 200px;
+    border-radius: 10px;
+    border: 1px solid #B3B3B3;
+    width: 77px;
+    height: 53px;
+}
+.birth_month_menu {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: 300;
+    color: #B3B3B3;
+    padding: 0 10px;
+    border-radius: 10px;
+    appearance: none; /* 기본 화살표 숨기기 (브라우저별 차이 있음) */
+    cursor: pointer;
+    text-align: left;
+} /*드롭다운 메뉴 스타일*/
+.birth_month_div::after{
+    content: '▼';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #B3B3B3;
+    pointer-events: none;
+}
+
+
+.birth_day_div{
+    position: absolute;
+    top: 351px;
+    left: 288px;
+    border-radius: 10px;
+    border: 1px solid #B3B3B3;
+    width: 77px;
+    height: 53px;
+}
+.birth_day_menu {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: 300;
+    color: #B3B3B3;
+    padding: 0 10px;
+    border-radius: 10px;
+    appearance: none; /* 기본 화살표 숨기기 (브라우저별 차이 있음) */
+    cursor: pointer;
+    text-align: left;
+} /*드롭다운 메뉴 스타일*/
+.birth_day_div::after{
+    content: '▼';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #B3B3B3;
+    pointer-events: none;
+}
+.selected{ /*드롭다운 선택 시 폰트 색*/
+    color: #000;
+}
+.txt3{
+    position: absolute;
+    top: 410px;
+    left: 31px;
+    color: #000;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 27px; /* 168.75% */
+    letter-spacing: -0.31px;
+}
+.boy_btn{
+    position: absolute;
+    top: 453px;
+    left: 31px;
+    width: 159px;
+    height: 53px;
+    border-radius: 10px;
+    border: 1px solid #B3B3B3;
+    background: none;
+    font-family: Pretendard;
+    font-size: 16px;
+    color: #B3B3B3;
+}
+.girl_btn{
+    position: absolute;
+    top: 453px;
+    left: 200px;
+    width: 159px;
+    height: 53px;
+    border-radius: 10px;
+    border: 1px solid #B3B3B3;
+    background: none;
+    font-family: Pretendard;
+    font-size: 16px;
+    color: #B3B3B3;
+}
+.txt4{
+    position: absolute;
+    top: 528px;
+    left: 31px;
+    color: #000;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 27px; /* 168.75% */
+    letter-spacing: -0.31px;
+}
+.notice_div{
+    position: absolute;
+    top: 571px;
+    left: 31px;
+    width: 328px;
+    height: 148px;
+    border-radius: 10px;
+    border: 1px solid #B3B3B3;
+}
+.notice_input{
+    color: #000;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    border: none;          /* 테두리 없애기 */
+    background: none;      /* 배경 없애기 */
+    width: 280px;
+    height: 140px;
+    outline: none;         /* 포커스 시 나타나는 외곽선 없애기 */
+    font-size: 16px;       /* 글자 크기 설정 */
+    text-align: left;
+    position: absolute;
+    left: 22px;
+    padding-top: 20px;
+    overflow-wrap: break-word; /* 단어가 넘칠 경우 줄바꿈 */
+    white-space: pre-wrap; /* 공백과 줄바꿈을 그대로 유지 */
+    resize: none;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+}
+.next_btn{
+    position: absolute;
+    top: 770px;
+    left: 143px;
+    width: 104px;
+    height: 42px;
+    border: none;
+    border-radius: 20px;
+    background: #F5F5F5;
+    font-family: Pretendard;
+    color: #828282;
+}

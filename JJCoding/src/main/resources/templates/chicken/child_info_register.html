@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/chicken/child_info_register.css">
+    <title>아이 정보 입력하기</title>
+</head>
+<body>
+<div class="box">
+    <p class="titletxt">자녀의 정보에 대해<br>자세하게 알려주세요 :)</p>
+    <p class="txt1">이름</p>
+    <div class="name_div">
+        <input type="text" class="name_input" autocomplete="off" placeholder="홍길동" maxlength="10">
+    </div>
+    <p class="txt2">생년월일</p>
+    <div class="birth_year_div">
+        <select class="birth_year_menu">
+            <option value="" disabled selected>선택</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+        </select>
+    </div>
+    <div class="birth_month_div">
+        <select class="birth_month_menu">
+            <option value="" disabled selected>선택</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+    </div>
+    <div class="birth_day_div">
+        <select class="birth_day_menu">
+            <option value="" disabled selected>선택</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+        </select>
+    </div>
+    <p class="txt3">성별</p>
+    <button class="boy_btn" onclick="handleGenderButtonClick('boy')">남자아이</button>
+    <button class="girl_btn" onclick="handleGenderButtonClick('girl')">여자아이</button>
+    <p class="txt4">건강 특이사항</p>
+    <div class="notice_div">
+        <textarea class="notice_input" maxlength="100" autocomplete="off" placeholder="ex) 알레르기, 복용중인 약(복용시간)&#10;질병(천식, 당뇨), 응급처치법"></textarea>
+    </div>
+    <button class="next_btn">
+        다음으로
+    </button>
+</div>
+<script>
+    const Year = document.querySelector('.birth_year_menu');
+    const Month = document.querySelector('.birth_month_menu');
+    const Day = document.querySelector('.birth_day_menu');
+
+    Year.addEventListener('change', function () {
+        if (Year.value) {
+            Year.classList.add('selected');
+        }
+    });
+    Month.addEventListener('change', function () {
+        if (Month.value) {
+            Month.classList.add('selected');
+        }
+    });
+    Day.addEventListener('change', function () {
+        if (Day.value) {
+            Day.classList.add('selected');
+        }
+    });
+
+    let selectedGender = null; // 선택된 성별 상태 저장 (boy 또는 girl)
+
+    function handleGenderButtonClick(gender) {
+        const boyButton = document.querySelector('.boy_btn');
+        const girlButton = document.querySelector('.girl_btn');
+
+        if (gender === 'boy') {
+            if (selectedGender === 'boy') {
+                // 이미 남자 버튼이 선택되었으면 해제
+                boyButton.style.backgroundColor = '#ffffff';
+                boyButton.style.color = '#B3B3B3';
+                selectedGender = null;
+            } else {
+                // 남자 버튼을 활성화하고 여자 버튼 해제
+                boyButton.style.backgroundColor = '#ffffff';
+                boyButton.style.color = '#000'; // 활성화된 버튼 글자 색상
+                girlButton.style.backgroundColor = '#ffffff';
+                girlButton.style.color = '#B3B3B3';
+                selectedGender = 'boy';
+            }
+        } else if (gender === 'girl') {
+            if (selectedGender === 'girl') {
+                // 이미 여자 버튼이 선택되었으면 해제
+                girlButton.style.backgroundColor = '#ffffff';
+                girlButton.style.color = '#B3B3B3';
+                selectedGender = null;
+            } else {
+                // 여자 버튼을 활성화하고 남자 버튼 해제
+                girlButton.style.backgroundColor = '#ffffff';
+                girlButton.style.color = '#000';
+                boyButton.style.backgroundColor = '#ffffff';
+                boyButton.style.color = '#B3B3B3';
+                selectedGender = 'girl';
+            }
+        }
+    }
+</script>
+</body>
+</html>

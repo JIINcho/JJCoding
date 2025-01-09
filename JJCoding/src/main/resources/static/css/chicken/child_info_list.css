@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff; /* body의 배경색을 흰색으로 설정 */
+}
+.box {
+    width: 393px;
+    height: 852px;
+    background: #ffffff; /* box의 기본 배경색을 회색으로 설정*/
+    margin: 0 auto; /* 수평 중앙 정렬 */
+    position: relative; /* 위치 기준을 상대적으로 설정 */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+.txt1{
+    position: absolute;
+    top: 106px;
+    left: 32px;
+    color: #000;
+    font-family: Pretendard;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 27px; /* 135% */
+    letter-spacing: -0.31px;
+}
+.txt2{
+    position: absolute;
+    top: 192px;
+    left: 30px;
+    color: #000;
+    font-family: Pretendard;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 27px; /* 158.824% */
+    letter-spacing: -0.31px;
+}
+.Boy_btn{
+    position: absolute;
+    top: 250px;
+    left: 27px;
+    width: 337px;
+    height: 53px;
+    border-radius: 10px;
+    background: #E9F6FF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border: none;
+}
+.B_name1{
+    top: 13px;
+    left: 30px;
+    position: absolute;
+    color: #5B5B5B;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 0px;
+}
+.B_gender1{
+    top: 13px;
+    right: 36px;
+    position: absolute;
+    color: #5B5B5B;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 0px;
+}
+.Girl_btn{
+    position: absolute;
+    top: 315px;
+    left: 27px;
+    width: 337px;
+    height: 53px;
+    border-radius: 10px;
+    background: #FEE;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border: none;
+}
+.G_name1{
+    top: 13px;
+    left: 30px;
+    position: absolute;
+    color: #5B5B5B;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 0px;
+}
+.G_gender1{
+    top: 13px;
+    right: 36px;
+    position: absolute;
+    color: #5B5B5B;
+    font-family: Pretendard;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 0px;
+}
