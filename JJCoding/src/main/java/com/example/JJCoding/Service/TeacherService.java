@@ -44,7 +44,7 @@ public class TeacherService {
         return null;
     }
 
-    public boolean TeacherIdCheck(String teacherId) {
+    public boolean isTeacherIdExists(String teacherId) {
         return teacherRepository.findByTeacherId(teacherId).isPresent();
     }
 }

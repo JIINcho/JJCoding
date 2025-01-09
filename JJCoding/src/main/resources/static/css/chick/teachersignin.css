@@ -165,6 +165,14 @@ input::placeholder {
     top: 370px;
     left: 30px;
 }
+
+.resultMessage{
+    font-size: 13px;
+    position: absolute;
+    top: 376px;
+    left: 80px;
+}
+
 .namediv{
     width: 205px;
     height: 53px;
