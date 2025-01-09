@@ -42,4 +42,9 @@ public class ParentsService {
         }
         return null;
     }
+
+    public boolean isParentsIdExists(String parentsId) {
+        return parentsRepository.findByParentsId(parentsId).isPresent();
+    }
+
 }

@@ -16,29 +16,20 @@ import com.example.JJCoding.DTO.TeacherDTO;
 import com.example.JJCoding.Service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
 public class ChickController {
 
-
     private final TeacherService teacherService;
 
     private final KinderGardenService kinderGardenService;
-
-    private final KinderGardenRepository kinderGardenRepository;
-
-    private TeacherDTO teacherDTO;
-
-    private EditTeacherDTO editTeacherDTO;
 
     private final TeacherRepository teacherRepository;
 
@@ -105,6 +96,20 @@ public class ChickController {
         return "redirect:/chick/login";
     }
 
+    @PostMapping("/api/check-id")
+    public ResponseEntity<Boolean> checkTeacherId(@RequestBody Map<String, String> request) {
+        String teacherId = request.get("teacherId");
+
+        // 입력값 검증
+        if (teacherId == null || teacherId.isEmpty()) {
+            return ResponseEntity.badRequest().body(false);
+        }
+
+        // 아이디 중복 여부 확인
+        boolean exists = teacherService.isTeacherIdExists(teacherId);
+        return ResponseEntity.ok(exists);
+    }
+
 
     //로그인페이지
     @GetMapping("/chick/login")
@@ -157,11 +162,6 @@ public class ChickController {
             model.addAttribute("status", "fail");
             return "message"; // 모달을 띄우기 위한 페이지
         }
-    }
-
-    @GetMapping("/check-teacherID")
-    public boolean checkTeacherID(@RequestParam String teacherID) {
-        return teacherService.TeacherIdCheck(teacherID);
     }
 
     @GetMapping("/editTeacher")

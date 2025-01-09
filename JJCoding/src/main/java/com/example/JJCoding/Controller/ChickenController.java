@@ -3,11 +3,10 @@ package com.example.JJCoding.Controller;
 
 import com.example.JJCoding.Entity.ParentsEntity;
 import com.example.JJCoding.Repository.ParentsRepository;
+import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import com.example.JJCoding.DTO.ParentsDTO;
-import com.example.JJCoding.DTO.TeacherDTO;
 import com.example.JJCoding.Service.ParentsService;
-import com.example.JJCoding.Service.TeacherService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -15,6 +14,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+
+import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
@@ -33,17 +34,20 @@ public class ChickenController {
         return "/chicken/p_signin";
     }
 
+    //부모님 회원가입 1
     @PostMapping("/parentsSave1")
     public String parentsSave1(@ModelAttribute ParentsDTO parentsDTO, HttpSession session) {
         session.setAttribute("parentsDTO", parentsDTO);
         return "redirect:/parentsSave2";
     }
 
+
     @GetMapping("/parentsSave2")
     public String parentsSave2(Model model) {
         return "/chicken/p_info";
     }
 
+    //부모님 회원가입 2
     @PostMapping("/parentsSave2")
     public String parentsSave2(@ModelAttribute ParentsDTO parentsDTO, HttpSession session) {
         ParentsDTO sessionParentsDTO = (ParentsDTO) session.getAttribute("parentsDTO");
@@ -76,11 +80,27 @@ public class ChickenController {
         return "redirect:/chicken/login";
     }
 
+    @PostMapping("/api/check-parents-id")
+    public ResponseEntity<Boolean> checkParentsId(@RequestBody Map<String, String> request) {
+        String parentsId = request.get("parentsId");
+
+        // 입력값 검증
+        if (parentsId == null || parentsId.isEmpty()) {
+            return ResponseEntity.badRequest().body(false);
+        }
+
+        // 아이디 중복 여부 확인
+        boolean exists = parentsService.isParentsIdExists(parentsId);
+        return ResponseEntity.ok(exists);
+    }
+
+
     @GetMapping("/chicken/login")
     public String parentsLogin(Model model) {
         return "/chicken/p_login";
     }
 
+    //부모님 로그인 성공
     @PostMapping("/parentsSuccess")
     public String parentsSuccess(@ModelAttribute ParentsDTO parentsDTO, HttpSession session, Model model) {
         System.out.println("parentsDTO = " + parentsDTO + ", session = " + session + ", model = " + model);
@@ -107,6 +127,7 @@ public class ChickenController {
 
     }
 
+    //부모님 정보
     @GetMapping("/parents/myinfo")
     public String parentsMyinfo(Model model, HttpSession session) {
         Long parentsId = (Long) session.getAttribute("Id");
@@ -114,5 +135,6 @@ public class ChickenController {
         model.addAttribute("parents", parents);
         return "/chicken/p_myinfo";
     }
+
 
 }
